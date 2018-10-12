@@ -6,6 +6,8 @@
  */
 package cityofaaron;
 
+import model.*;
+
 /**
  *
  * @author Luccas
