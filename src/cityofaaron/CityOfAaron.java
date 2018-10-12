@@ -20,12 +20,15 @@ public class CityOfAaron {
     public static void main(String[] args) {
         // TODO code application logic here
      Player player = new Player();
-     player.setName("Ron");
+     player.setName("Luccas");
      
      Game game = new Game();
      game.setPlayer(player);
      
-     System.out.println(Game.player.getName());
+     System.out.println(game.getPlayer().getName());
+     
+     System.out.println(TeamMember.LUCCAS.getName()+ "_"+ TeamMember.LUCCAS.getTitle());
+     
     }
     
 }
