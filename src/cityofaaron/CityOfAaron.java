@@ -29,6 +29,14 @@ public class CityOfAaron {
      
      System.out.println(TeamMember.LUCCAS.getName()+ "_"+ TeamMember.LUCCAS.getTitle());
      
+     
+     /*
+     *Test for LisiItem class
+     *@author Luccas
+     */
+     ListItem item = new ListItem();
+     item.setName("sword");
+     item.setNumber(1);
+     System.out.println(item.getName() + " - Qtd.:" + item.getNumber());
     }
-    
 }
