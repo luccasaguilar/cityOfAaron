@@ -13,9 +13,9 @@ package model;
 public enum TeamMember 
 {
  // The members of the enumeration
-    LUCCAS("Luccas" , "Brazil"),
-    RONAN("Ronan", "Brazil"),
-    RON("Ron","Chile");
+    LUCCAS("Luccas" , "Systems Analyst"),
+    RONAN("Ronan", "Security Specialist"),
+    RON("Ron","Quality Assurance");
     
     //data members
     

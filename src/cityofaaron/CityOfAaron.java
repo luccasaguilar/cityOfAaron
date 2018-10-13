@@ -20,23 +20,34 @@ public class CityOfAaron {
     public static void main(String[] args) {
         // TODO code application logic here
      Player player = new Player();
-     player.setName("Luccas");
+     player.setName("Ron");
      
      Game game = new Game();
      game.setPlayer(player);
      
      System.out.println(game.getPlayer().getName());
      
-     System.out.println(TeamMember.LUCCAS.getName()+ "_"+ TeamMember.LUCCAS.getTitle());
+     System.out.println(TeamMember.RON.getName()+ " : "+ TeamMember.RON.getTitle());
      
+     /*
+     *Test for Location class
+     *@author Ronsilva
+     */
+     Location location = new Location();
+     location.setDescription("Great");
+     location.setSymbol("Mountains");
+     System.out.println(location.getDescription() + "Symbol:" + location.getSymbol());
      
      /*
      *Test for LisiItem class
      *@author Luccas
      */
+     
      ListItem item = new ListItem();
      item.setName("sword");
      item.setNumber(1);
      System.out.println(item.getName() + " - Qtd.:" + item.getNumber());
+     
+    
     }
 }
