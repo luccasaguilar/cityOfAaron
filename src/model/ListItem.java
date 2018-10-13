@@ -35,5 +35,4 @@ public class ListItem implements Serializable{
     public void setNumber(Integer _number){
         number = _number;
     }
-    
 }

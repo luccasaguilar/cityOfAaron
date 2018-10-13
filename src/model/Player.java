@@ -29,7 +29,5 @@ public class Player implements Serializable {
     public void setName(String _name) 
     {
         name = _name;
-    }
-    
-     
+    }   
 }
