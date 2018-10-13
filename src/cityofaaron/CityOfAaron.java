@@ -48,6 +48,10 @@ public class CityOfAaron {
      item.setNumber(1);
      System.out.println(item.getName() + " - Qtd.:" + item.getNumber());
      
+     /*
+     *Test for CropData class
+     *@author Ronan
+     */
      CropData crop = new CropData();
      crop.setYear(1);
      crop.setPopulation(250);
