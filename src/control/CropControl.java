@@ -88,4 +88,51 @@ public static int buyLand(int landPrice, int acresToBuy, CropData cropData)
     //return acresOwned
     return owned;
  }
+
+// The plantCrops method
+// Purpose: To allocate seed for next years crops
+// Parameters: the number of acres to plant
+// and a reference to a CropData object
+// Returns: the number of acres planted
+// Pre-conditions: acres to plant must be positive,
+// acres of City >= acres to plant,
+//population x 10 >= acres to plant,
+//wheat In Store >= acres to plant/2
+
+public static int plantCrops(int acresToPlant, CropData cropData)
+ { 
+    //If acresToPlant < 0, return -1
+    if(acresToPlant < 0)
+        return -1;
+
+    //If acresCity < acresToPlant, return -1
+    int acresCity = cropData.getCropYield();
+    if(acresCity < acresToPlant)
+        return -1;
+    
+    //If acresToPlant > population x 10, return -1
+    int population = cropData.getPopulation();
+    if(acresToPlant > (population * 10))
+        return -1;
+
+    //If wheatInStore < acresPlanted/2, return -1
+    int wheatInStore = cropData.getWheatInStore();
+    if(wheatInStore < (acresToPlant /2))
+        return -1;
+    
+    //costToPlant = acresToPlant/2
+    int costToPlant = acresToPlant/2;
+
+    //wheatInStore = wheatInStore – costToPlant
+    wheatInStore -= costToPlant;
+    cropData.setWheatInStore(wheatInStore);
+    
+    //acresPlanted = acresPlanted + acresToPlant
+    int acresPlanted = cropData.getAcresPlanted();
+    acresPlanted += acresToPlant;
+    
+    //return acresPlanted
+    return acresPlanted;
+ }
+
 }
