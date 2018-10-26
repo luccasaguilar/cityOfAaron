@@ -77,10 +77,9 @@ public class CropControlTest {
         System.out.println("buyLand1");
         int landPrice = 20;
         int acresToBuy = 10;
-        CropData acresOwned = new CropData();
-        acresOwned.setAcresOwned(0);
         CropData cropData = new CropData();
         cropData.setWheatInStore(400);
+        cropData.setAcresOwned(0);
         int expResult = 10;
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
@@ -95,10 +94,9 @@ public class CropControlTest {
         System.out.println("buyLand2");
         int landPrice = 20;
         int acresToBuy = -5;
-        CropData acresOwned = new CropData();
-        acresOwned.setAcresOwned(0);
         CropData cropData = new CropData();
         cropData.setWheatInStore(400);
+        cropData.setAcresOwned(0);
         int expResult = -1;
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
@@ -113,10 +111,9 @@ public class CropControlTest {
         System.out.println("buyLand3");
         int landPrice = 20;
         int acresToBuy = 100;
-        CropData acresOwned = new CropData();
-        acresOwned.setAcresOwned(0);
         CropData cropData = new CropData();
         cropData.setWheatInStore(400);
+        cropData.setAcresOwned(0);
         int expResult = -1;
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
@@ -131,10 +128,9 @@ public class CropControlTest {
         System.out.println("buyLand4");
         int landPrice = 20;
         int acresToBuy = 20;
-        CropData acresOwned = new CropData();
-        acresOwned.setAcresOwned(0);
         CropData cropData = new CropData();
         cropData.setWheatInStore(400);
+        cropData.setAcresOwned(0);
         int expResult = 20;
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
@@ -149,14 +145,12 @@ public class CropControlTest {
         System.out.println("buyLand5");
         int landPrice = 20;
         int acresToBuy = 0;
-        CropData acresOwned = new CropData();
-        acresOwned.setAcresOwned(0);
         CropData cropData = new CropData();
         cropData.setWheatInStore(400);
+        cropData.setAcresOwned(0);
         int expResult = 0;
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }     
-
 }
