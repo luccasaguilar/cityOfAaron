@@ -1,6 +1,6 @@
 // The CropControl class - part of the control layer
 // class contains all of the calculation methods for managing the crops
-// Author: Luccas Aguilar
+// Author: Luccas Aguilar, Ronald Silva, Ronan Macedo
 // Date last modified: October 2018
 //-------------------------------------------------------------
 package control;
