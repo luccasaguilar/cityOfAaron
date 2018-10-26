@@ -57,4 +57,35 @@ public static int calcLandCost()
     //return acresOwned
     return owned;
  }
+ 
+// The buyLand method
+// Purpose: To buy land
+// Parameters: the price of land, the number of acres to buy.
+//    and a reference to a CropData object
+// Returns: the number of acres after the purchase
+// Pre-conditions: acres to buy must be positive
+// and wheat In Store >= total land price (acresToBuy x landPrice)
+public static int buyLand(int landPrice, int acresToBuy, CropData cropData)
+ { 
+    //if acresToBuy < 0, return -1
+    if(acresToBuy < 0)
+        return -1;
+
+    //If wheatInStore < (acresToBuy x landPrice), return -1
+    int wheatInStore = cropData.getWheatInStore();
+    if(wheatInStore < (landPrice * acresToBuy))
+        return -1;
+    
+    //acresOwned = acresOwned + acresToBuy
+    int owned = cropData.getAcresOwned();
+    owned += acresToBuy;
+    cropData.setAcresOwned(owned);
+
+    //wheatInStore = wheatInStore - (acresToBuy x landPrice)
+    wheatInStore -= (acresToBuy * landPrice);
+    cropData.setWheatInStore(wheatInStore);
+
+    //return acresOwned
+    return owned;
+ }
 }
