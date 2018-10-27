@@ -108,7 +108,7 @@ public static int plantCrops(int acresToPlant, CropData cropData)
         return -1;
 
     //If acresCity < acresToPlant, return -1
-    int acresCity = cropData.getCropYield();
+    int acresCity = cropData.getAcresOwned();
     if(acresCity < acresToPlant)
         return -1;
     
@@ -129,10 +129,10 @@ public static int plantCrops(int acresToPlant, CropData cropData)
     wheatInStore -= costToPlant;
     cropData.setWheatInStore(wheatInStore);
     
-    //acresPlanted = acresPlanted + acresToPlant
-    int acresPlanted = cropData.getAcresPlanted();
-    acresPlanted += acresToPlant;
-    
+    //acresPlanted = acresToPlant
+    int acresPlanted = acresToPlant;
+    cropData.setAcresPlanted(acresPlanted);
+        
     //return acresPlanted
     return acresPlanted;
  }
