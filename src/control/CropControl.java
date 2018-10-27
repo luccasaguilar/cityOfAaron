@@ -137,4 +137,30 @@ public static int plantCrops(int acresToPlant, CropData cropData)
     return acresPlanted;
  }
 
+//The feedPeople method
+//purpose: feed people
+//parameters: the number of wheat to set aside, the number of wheat left in storage.
+//reference to CropData object
+//Returns: wheat set aside to feed people and wheat left in storage.
+//pre-conditions: must be a positive number.
+//and wheat is storage >total of wheat set aside to feet people.
+
+public static int feedPeople(int wheatForFood, int wheatInStore, CropData cropData)
+ { 
+    //if wheatForFood < 0, return -1 
+    if (wheatForFood < 0)
+        return -1;
+
+    //If wheatInStorage < wheatForFood return -1 
+    if(wheatInStore < wheatForFood)
+        return -1;
+    
+    //wheatInStorage = wheatInStorage – wheatForFood
+    wheatInStore -= wheatForFood;
+    cropData.setWheatInStore(wheatInStore);
+
+    //return wheatForFood and wheatInStorage
+    return  wheatInStore;
+   
+ }
 }
