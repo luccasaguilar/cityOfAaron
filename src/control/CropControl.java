@@ -145,13 +145,14 @@ public static int plantCrops(int acresToPlant, CropData cropData)
 //pre-conditions: must be a positive number.
 //and wheat is storage >total of wheat set aside to feet people.
 
-public static int feedPeople(int wheatForFood, int wheatInStore, CropData cropData)
+public static int feedPeople(int wheatForFood, CropData cropData)
  { 
     //if wheatForFood < 0, return -1 
     if (wheatForFood < 0)
         return -1;
 
     //If wheatInStorage < wheatForFood return -1 
+    int wheatInStore = cropData.getWheatInStore();
     if(wheatInStore < wheatForFood)
         return -1;
     
@@ -160,7 +161,7 @@ public static int feedPeople(int wheatForFood, int wheatInStore, CropData cropDa
     cropData.setWheatInStore(wheatInStore);
 
     //return wheatForFood and wheatInStorage
-    return  wheatInStore;
+    return wheatInStore;
    
  }
 }

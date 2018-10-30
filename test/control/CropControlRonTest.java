@@ -22,90 +22,55 @@ public class CropControlRonTest {
      * Test of calcLandCost method, of class CropControl.
      */
     @Test
-    public void testCalcLandCost() {
-        System.out.println("calcLandCost");
-        int expResult = 0;
-        int result = CropControl.calcLandCost();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of sellLand method, of class CropControl.
-     */
-    @Test
-    public void testSellLand() {
-        System.out.println("sellLand");
-        int landPrice = 0;
-        int acresToSell = 0;
-        CropData cropData = null;
-        int expResult = 0;
-        int result = CropControl.sellLand(landPrice, acresToSell, cropData);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of buyLand method, of class CropControl.
-     */
-    @Test
-    public void testBuyLand() {
-        System.out.println("buyLand");
-        int landPrice = 0;
-        int acresToBuy = 0;
-        CropData cropData = null;
-        int expResult = 0;
-        int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of plantCrops method, of class CropControl.
-     */
-    @Test
-    public void testPlantCrops() {
-        System.out.println("plantCrops");
-        int acresToPlant = 0;
-        CropData cropData = null;
-        int expResult = 0;
-        int result = CropControl.plantCrops(acresToPlant, cropData);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of feedPeople method, of class CropControl.
-     */
-    @Test
-    public void testFeedPeople() {
-        System.out.println("feedPeople");
-        int wheatForFood = 0;
-        int wheatInStore = 0;
-        CropData cropData = null;
-        int expResult = 0;
-        int result = CropControl.feedPeople(wheatForFood, wheatInStore, cropData);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
-     /**
-     * Test of feedPeople method, of class CropControl.
-     */
-    @Test
     public void testFeedPeople1() {
         System.out.println("feedPeople1");
         int wheatForFood = 10;
-        int wheatInStore = 400;
         CropData cropData = new CropData();
+        cropData.setWheatInStore (400);
         int expResult = 390;
-        int result = CropControl.feedPeople(wheatForFood, wheatInStore, cropData);
-        assertEquals(expResult, result);
-     
+        int result = CropControl.feedPeople(wheatForFood, cropData);
+        assertEquals(expResult, result); 
     }
+    
+     /**
+     * Test of calcLandCost method, of class CropControl.
+     */
+    @Test
+    public void testFeedPeople2() {
+        System.out.println("feedPeople2");
+        int wheatForFood = -30;
+        CropData cropData = new CropData();
+        cropData.setWheatInStore (400);
+        int expResult = -1;
+        int result = CropControl.feedPeople(wheatForFood, cropData);
+        assertEquals(expResult, result);
+    }
+    
+     /**
+     * Test of calcLandCost method, of class CropControl.
+     */
+    @Test
+    public void testFeedPeople3() {
+        System.out.println("feedPeople3");
+        int wheatForFood = 430;
+        CropData cropData = new CropData();
+        cropData.setWheatInStore (400);
+        int expResult = -1;
+        int result = CropControl.feedPeople(wheatForFood, cropData);
+        assertEquals(expResult, result);
+    }
+    
+     /**
+     * Test of calcLandCost method, of class CropControl.
+     */
+    @Test
+    public void testFeedPeople4() {
+        System.out.println("feedPeople4");
+        int wheatForFood = 100;
+        CropData cropData = new CropData();
+        cropData.setWheatInStore (400);
+        int expResult = 300;
+        int result = CropControl.feedPeople(wheatForFood, cropData);
+        assertEquals(expResult, result);
+    } 
 }
