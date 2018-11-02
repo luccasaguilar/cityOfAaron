@@ -162,6 +162,26 @@ public static int feedPeople(int wheatForFood, CropData cropData)
 
     //return wheatForFood and wheatInStorage
     return wheatInStore;
-   
  }
+
+//purpose: set the offering percentage value
+//paramenters: percentage value and setOffering from CropData
+//return: percentage value
+//pre-conditions: must be a positive number and less than 100
+public static int setOffering(int percentage, CropData cropData)
+    { 
+    //if percentage > 100, return -1
+    if(percentage > 100)
+        return -1;
+    
+    //if percentage < 100, return -1    
+    if(percentage < 0)
+        return -1;
+    
+    //setOffering 
+    cropData.setOffering(percentage);
+    
+    //return the percentage
+        return percentage;           
+    }
 }
