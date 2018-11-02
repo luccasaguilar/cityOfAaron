@@ -20,6 +20,8 @@ public class Game implements Serializable {
     //setPlayer(:Player): void
     //getPlayer(:void): Player
     private Player thePlayer;
+    private CropData cropData;
+   
     
     public Game() {}
     
@@ -31,4 +33,14 @@ public class Game implements Serializable {
         return thePlayer;
     }
   
+    public void setCropData(CropData _cropData) {
+       cropData = _cropData; 
+    }
+    
+    public CropData getCropData(){
+        return cropData;
+    }
+
+
+    
 }
