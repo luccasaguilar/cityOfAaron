@@ -8,6 +8,7 @@ package control;
 import java.util.Random;
 import model.*;
 
+
 public class CropControl
 {
 // constants

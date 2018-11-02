@@ -7,17 +7,27 @@
 package cityofaaron;
 
 import model.*;
+import view.*;
 
 /**
  *
  * @author Luccas
  */
-public class CityOfAaron {
-
+public class CityOfAaron 
+{
+    // variable for keeping a reference to the Game object
+    private static Game theGame = null;
     /**
      * @param args the command line arguments
      */
+    // main function - entry point for the program
+    // runs the main menu
+
     public static void main(String[] args) {
+   
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenuView();       
+
         // TODO code application logic here
      Player player = new Player();
      player.setName("Ron");
@@ -74,4 +84,6 @@ public class CityOfAaron {
      System.out.println("Wheat for Food:" + crop.getWheatForFood());
      System.out.println("Acres Planted:" + crop.getAcresPlanted());
     }
+    
+
 }
