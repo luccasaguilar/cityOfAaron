@@ -17,7 +17,7 @@ import cityofaaron.CityOfAaron;
 public class GameControl {
     
     public static void createNewGame(String _name)
-
+    {
    // Create a new Game object.
    Game game = new Game();
 
@@ -29,9 +29,6 @@ public class GameControl {
    // Save a reference to the CropData object in the Game object
    // Save a reference to the Game object in the static variable
    // declared in the CityOfAaron class.
-    
-    // create the game object
-        Game game = new Game();
         
         // create the player object and set the name
         Player player = new Player();
@@ -59,4 +56,4 @@ public class GameControl {
         // when all is done, save a reference to the Game object
         CityOfAaron.setGame(game);
     }
-
+}

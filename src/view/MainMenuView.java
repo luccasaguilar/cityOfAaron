@@ -13,6 +13,7 @@ package view;
 
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
+import control.GameControl;
 
 public class MainMenuView {
     
@@ -70,6 +71,22 @@ public class MainMenuView {
     // ===================================       
     public int getMenuOption()
     {
+        // declare a variable to hold user’s input
+        int userInput = 0;
+        final int MAX = 5;
+        Scanner keyboard = new Scanner(System.in );
+
+        // begin loop
+        do
+        {
+                 // get user input from the keyboard
+                 userInput = keyboard.nextInt();
+                 // if it is not a valid value, output an error message
+                // loop back to the top of the loop if input was not valid
+        // end loop
+        } while (userInput < 1 || userInput > MAX);
+        return userInput;
+
     }
     // The doAction method
     // Purpose: performs the selected action
@@ -78,13 +95,6 @@ public class MainMenuView {
     // ===================================       
     public void doAction(int option)
     {
-         // if the option is 1, call startNewGame( )
-        // if the option is 2, call startExistingGame( )
-        // if the option is 3, call displayHelpMenu( )
-        // if the option is 4, call displaySaveGame( )
-        // if the option is 5, display a goodbye message
-    
-        
          switch(option)
         {
             case 1: // create and start a new game
@@ -159,7 +169,4 @@ public class MainMenuView {
 
 }
         
-    
 
-
-}
