@@ -20,15 +20,6 @@ public class GameControl {
     {
    // Create a new Game object.
    Game game = new Game();
-
-   // Create a new Player object
-   //  Store the name of the player in the Player object
-   // Store a reference to the Player object in the Game object
-   // Create a CropData object
-   // Initialize the data values in the CropData object
-   // Save a reference to the CropData object in the Game object
-   // Save a reference to the Game object in the static variable
-   // declared in the CityOfAaron class.
         
         // create the player object and set the name
         Player player = new Player();
@@ -54,6 +45,6 @@ public class GameControl {
         game.setCropData(cropData); 
         
         // when all is done, save a reference to the Game object
-        CityOfAaron.setGame(game);
+       // CityOfAaron.setGame(game);
     }
 }
