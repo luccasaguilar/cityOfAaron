@@ -20,7 +20,7 @@ public class CropControlTest {
 
     /**
      * Test of setOffering method, of class CropControl.
-     */
+    
     @Test
     public void testSetOffering() {
         System.out.println("setOffering");
@@ -33,5 +33,5 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+     */
 }

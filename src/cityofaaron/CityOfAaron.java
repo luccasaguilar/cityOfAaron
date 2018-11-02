@@ -85,5 +85,13 @@ public class CityOfAaron
      System.out.println("Acres Planted:" + crop.getAcresPlanted());
     }
     
+    public static void setGame(Game _game) {
+       theGame = _game; 
+    }
+    
+    public static Game getGame(){
+        return theGame;
+    }
+    
 
 }

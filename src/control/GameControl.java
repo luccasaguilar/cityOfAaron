@@ -45,6 +45,6 @@ public class GameControl {
         game.setCropData(cropData); 
         
         // when all is done, save a reference to the Game object
-       // CityOfAaron.setGame(game);
+        CityOfAaron.setGame(game);
     }
 }
