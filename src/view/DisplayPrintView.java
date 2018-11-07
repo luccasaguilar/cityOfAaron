@@ -99,9 +99,8 @@ public class DisplayPrintView {
             case 4: // List or view the developers of this game
                 displayDevelopers();
                 break;
-            case 5: // Return to the Game menu (need to be adjusted when the game menu is ready)
-                MainMenuView mmv = new MainMenuView();
-                mmv.displayMenuView();
+            case 5: // Return to the Game menu
+                return;
  
         } 
     }
