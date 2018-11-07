@@ -1,5 +1,5 @@
 /*
-* The DisplayPrintView class - part of the view layer file for the cityOfAaron project
+* The ListMenuView class - part of the view layer file for the cityOfAaron project
 * Object of this class manages the main menu
 * Author: Luccas Aguilar, Ronan Macedo, Ronald Silva
 *Date last modified: 05 NOV 2018
@@ -14,7 +14,7 @@ import cityofaaron.CityOfAaron;
  *
  * @author Luccas
  */
-public class DisplayPrintView {
+public class ListMenuView {
     Scanner keyboard = new Scanner(System.in);
     
     private String theMenu;
@@ -26,7 +26,7 @@ public class DisplayPrintView {
     // Parameters: none
     // Returns: none
     // =========================================================  
-    public DisplayPrintView(){
+    public ListMenuView(){
         theMenu = "\n" +
                       "**************************************\n" +
                       "* CITY OF AARON: DISPLAY/PRINT MENU  *\n" +
@@ -40,7 +40,7 @@ public class DisplayPrintView {
         max = 5;
     } 
 
-    public void DisplayPrintView(){    
+    public void ListMenuView(){    
         int menuOption;
         do {
             // Display the menu
