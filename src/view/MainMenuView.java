@@ -54,7 +54,7 @@ public class MainMenuView {
     do
     {
         // Display the menu
-        System.out.println(mainMenu);
+        System.out.println(theMenu);
 
         // Prompt the user and get the user’s input
         menuOption = getMenuOption();

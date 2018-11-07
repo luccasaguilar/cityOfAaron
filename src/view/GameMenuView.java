@@ -21,8 +21,8 @@ public class GameMenuView {
     Scanner keyboard = new Scanner(System.in );
     Game theGame;
     
-     public void displayMenuView()
- {
+     public void displayMenuView() {
+     int menuOption;    
      do
      {
          // display the menu
