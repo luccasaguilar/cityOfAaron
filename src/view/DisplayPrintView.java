@@ -88,16 +88,16 @@ public class DisplayPrintView {
          switch(option)
         {
             case 1: // List or view the animals in the storehouse
-                displayAnimals();
+                listAnimals();
                 break;
             case 2: // List or view the tools in the storehouse
-                displayTools();
+                listTools();
                 break;
             case 3: // List or view the provisions in the storehouse
-                displayProvisions();
+                listProvisions();
                 break;
             case 4: // List or view the developers of this game
-                displayDevelopers();
+                listTeam();
                 break;
             case 5: // Return to the Game menu
                 return;
@@ -105,42 +105,42 @@ public class DisplayPrintView {
         } 
     }
          
-    // The displayAnimals method
+    // The listAnimals method
     // Purpose: List or view the animals in the storehouse
     // Parameters: none
     // Returns: none
     // ===================================     
-    public void displayAnimals(){
+    public void listAnimals(){
         // List or view the animals in the storehouse
         System.out.println("\nList or view the animals in the storehouse option selected.");
     }
     
-    // The displayTools method
+    // The listTools method
     // Purpose: List or view the tools in the storehouse
     // Parameters: none
     // Returns: none
     // ===================================     
-    public void displayTools(){
+    public void listTools(){
         // List or view the tools in the storehouse
         System.out.println("\nList or view the tools in the storehouse option selected.");
     }
 
-    // The displayProvisions method
+    // The listProvisions method
     // Purpose: List or view the provisions in the storehouse
     // Parameters: none
     // Returns: none
     // ===================================     
-    public void displayProvisions(){
+    public void listProvisions(){
         // List or view the provisions in the storehouse
         System.out.println("\nList or view the provisions in the storehouse option selected.");
     }
 
-    // The displayProvisions method
+    // The listTeam method
     // Purpose: List or view the provisions in the storehouse
     // Parameters: none
     // Returns: none
     // ===================================     
-    public void displayDevelopers(){
+    public void listTeam(){
         // List or view the developers of this game
         System.out.println("\nLuccas Aguilar, Ronan Macedo and Ronand Silva");
     }
