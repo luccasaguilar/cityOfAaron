@@ -48,12 +48,13 @@ public class MainMenuView {
    
 
     public void displayMenuView()
-    {    
-    int menuOption;
+    {   
+    // execute this loop as long as the selected option is not 5
+    int menuOption = 0;
     do
     {
         // Display the menu
-        System.out.println(theMenu);
+        System.out.println(mainMenu);
 
         // Prompt the user and get the user’s input
         menuOption = getMenuOption();
@@ -137,8 +138,10 @@ public class MainMenuView {
         // Display a welcome message
         System.out.println("Welcome " + name + " have fun!!!");
         // Display the Game menu
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenuView();
 
-    }
+    } // end of the startNewGame()method
     
     // The startSavedGame method
         // Purpose: creates game object and starts the game
