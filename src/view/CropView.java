@@ -1,8 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* The CropView class - part of the view layer file for the cityOfAaron project
+* Object of this class manages the interaction with the user
+* Author: Luccas Aguilar, Ronan Macedo, Ronald Silva
+*Date last modified: 06 NOV 2018
+*/
 package view;
 
 import model.*;
