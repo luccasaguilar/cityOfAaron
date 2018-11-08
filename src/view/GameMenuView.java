@@ -37,7 +37,7 @@ public class GameMenuView {
                       " 2 - List or view the game menu list\n" +
                       " 3 - List or view the move to new location\n" +
                       " 4 - List or view the game manage crops\n" +
-                      " 5 - Return to the Game menu\n";
+                      " 5 - Return to the Main menu\n";
 
         max = 5;
     } 
@@ -125,7 +125,9 @@ public class GameMenuView {
     //Returns: none
     public void viewList(){
         //View the game menu list
-        System.out.println("\nGame list");
+        //System.out.println("\nGame list");
+        ListMenuView lmv = new ListMenuView();
+        lmv.ListMenuView();
     }
     
     //The moveToNewLocation method

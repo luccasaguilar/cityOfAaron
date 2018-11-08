@@ -38,11 +38,11 @@ public class DisplayHelpMenuView {
                       "2 - View the map help\n" +
                       "3 - View the move help\n" +
                       "4 - View the list help\n" +
-                      " 5 - Return to the Game menu\n";
+                      "5 - Return to the Main menu\n";
         max = 5;
     }
     
-    public void displayMenuView() {
+    public void DisplayHelpMenuView(){
         int menuOption;
         do {
             //Display the help menu
