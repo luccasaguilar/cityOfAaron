@@ -16,10 +16,30 @@ import model.Game;
  */
 public class GameMenuView {
     
-    String gameMenu;
-    int max;
+   private String gameMenu;
+   private int max;
     Scanner keyboard = new Scanner(System.in );
     Game theGame;
+    
+    // The DisplayMenuView method
+    // Purpose: displays the game menu, gets the user's input, and does the 
+    //          selected action
+    // Parameters: none
+    // Returns: none
+    // =========================================================  
+    public GameMenuView(){
+        gameMenu = "\n" +
+                      "**************************************\n" +
+                      "* CITY OF AARON: DISPLAY/GAME MENU  *\n" +
+                      "**************************************\n" +
+                      " 1 - List or view the game map\n" +
+                      " 2 - List or view the game menu list\n" +
+                      " 3 - List or view the move to new location\n" +
+                      " 4 - List or view the game manage crops\n" +
+                      " 5 - Return to the Game menu\n";
+
+        max = 5;
+    } 
     
      public void displayMenuView() {
      int menuOption;    
@@ -70,23 +90,59 @@ public class GameMenuView {
     {
          switch(option)
         {
-            case 1: // create and start a new game
-                startNewGame();
+            case 1: // view the game map
+                viewMap();
                 break;
-            case 2: // get and start a saved game
-                startSavedGame();
+            case 2: // view the game menu list
+                viewList();
                 break;
-            case 3: // get help menu
-                displayHelpMenuView();
+            case 3: // move to new location in the game
+                moveToNewLocation();
                 break;
-            case 4: // save game
-                displaySaveGameView();
+            case 4: // manage the crops
+                manageCrops();
                 break;
             case 5: // return to main menu
                 return;
  
         } 
     
+    }
+     
+    //the viewMap method
+    //Purpose: View the game goals
+    //Parameters: none
+    //Returns: none
+    public void viewMap(){
+        //View the map
+        System.out.println("\nGame Map");
+    }
+    
+    //The viewList method
+    //Purpose: View the game menu list 
+    //Parameters: none
+    //Returns: none
+    public void viewList(){
+        //View the game menu list
+        System.out.println("\nGame list");
+    }
+    
+    //The moveToNewLocation method
+    //Purpose: View the move to new location
+    //Parameters: none
+    //Returns: none
+    public void moveToNewLocation() {
+        //View the move to new location
+        System.out.println("\nMove to new location");
+    }
+    
+    //The manageCrops method
+    //Purpose: View manage crops
+    //Parameters: none
+    //Returns: none
+    public void manageCrops(){
+        //View the manage crops
+        System.out.println("\nManage crops");
     }
 
 }
