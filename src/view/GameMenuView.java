@@ -146,6 +146,9 @@ public class GameMenuView {
     public void manageCrops(){
         //View the manage crops
         System.out.println("\nManage crops");
+       
+        CropView crop = new CropView();
+        crop.runCropView();
     }
 
 }
