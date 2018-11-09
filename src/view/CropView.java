@@ -49,6 +49,27 @@ public class CropView {
         System.out.format("You now own %d acres of land. ", cropData.getAcresOwned());
     }
     
+    // The feedPeopleView method
+    // Purpose: interface with the user input the number of wheat to set aside
+    // Parameters: none
+    // Returns: none  
+    // author Ron Silva
+    public static void feedPeopleView(){
+        
+        // Prompt the user to enter the the number of wheat to set aside
+        System.out.print("\nHow many wheats do you want to set aside? "); 
+
+        //  Get the user’s input and save it.
+        int wheatForFood;
+        wheatForFood  = keyboard.nextInt();
+
+        // Call the feedPeople( ) method in the control layer to feed people
+        CropControl.feedPeople(wheatForFood, cropData);
+        
+        // output the number of wheat to set aside
+        System.out.format("You set aside. ", cropData.getWheatForFood());
+    }
+    
     // The plantCropsView method
     // Purpose: interface with the user input for planting land
     // Parameters: none
@@ -85,6 +106,7 @@ public class CropView {
         // call the SellLandView( ) method - 2
         
         // call the feedPeopleView( ) method - 3
+        feedPeopleView();
         
         // call the plantCropsView( ) method - 4
         plantCropsView();
