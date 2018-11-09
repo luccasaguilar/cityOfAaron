@@ -119,22 +119,54 @@ public class CropView {
         System.out.format("\nYou now have %d wheat in store. ", cropData.getWheatInStore());
     }
     
-        // The runCropView method()
+    // The plantCropsView method
+    // Purpose: interface with the user input for planting land
+    // Parameters: none
+    // Returns: none  
+    // author Luccas
+    public static void displayCropsReportView(){
+        
+        // output the amount of wheat left in storage
+        //	The year number
+        System.out.format("\nThe year number: %d", cropData.getYear());
+        //	How many people starved
+        System.out.format("\nHow many people starved: %d", cropData.getNumberWhoDied());
+        //	How many people came to the city
+        System.out.format("\nHow many people came to the city: %d", cropData.getNewPeople());
+        //	The current population
+        System.out.format("\nThe current population: %d", cropData.getPopulation());
+        //	The number of acres of crop land owned by the city
+        System.out.format("\nThe number of acres of crop land owned by the city: %d", cropData.getAcresOwned());
+        //	The number of bushels per acre in this years harvest
+        System.out.format("\nThe number of bushels per acre in this years harvest: %d", cropData.getCropYield());
+        //	The total number of bushels of wheat harvested
+        System.out.format("\nThe total number of bushels of wheat harvested: %d", cropData.getHarvest());
+        //	The number of bushels of wheat in store (2700)
+        System.out.format("\nThe number of bushels of wheat in store: %d", cropData.getWheatInStore());
+        System.out.print("\n************************************");        
+    }
+
+    
+
+    // The runCropView method()
     // Purpose: runs the methods to manage the crops game
     // Parameters: none
     // Returns: none
     public static void runCropView(){
         
-        // call the buyLandView( ) method - 1
+        // call the displayCropsReportView( ) method - 1
+        displayCropsReportView();
+        
+        // call the buyLandView( ) method - 2
         buyLandView();
         
-        // call the SellLandView( ) method - 2
+        // call the SellLandView( ) method - 3
         sellLandView();
         
-        // call the feedPeopleView( ) method - 3
+        // call the feedPeopleView( ) method - 4
         feedPeopleView();
         
-        // call the plantCropsView( ) method - 4
+        // call the plantCropsView( ) method - 5
         plantCropsView();
 
     }
