@@ -97,15 +97,17 @@ public class HelpMenuView {
             case 2: //View the map help
                 viewMapHelp();
                 break;
-            case 3: //View the move help
+            case 3: //View the map help
+                viewMapHelp();
+                break;
+            case 4: //View the move help
                 viewMoveHelp();
                 break;
-            case 4: //View the list help
+            case 5: //View list help
                 viewListHelp();
                 break;
-            case 5: //Return to the game menu
-                return;
-        }
+            case 6://Return to Main Menu
+                    }
     }
     
     //the viewGoals method
@@ -114,7 +116,7 @@ public class HelpMenuView {
     //Returns: none
     public void viewGoals(){
         //View the game goals
-        System.out.println("\nGame Goals");
+        System.out.println("\nGame goals selected");
     }
     
     //The viewMapHelp method
@@ -123,7 +125,7 @@ public class HelpMenuView {
     //Returns: none
     public void viewMapHelp(){
         //View the map helping guide
-        System.out.println("\nMap Helping Guide");
+        System.out.println("\nMap helping guide selected");
     }
     
     //The viewMoveHelp method
@@ -132,7 +134,7 @@ public class HelpMenuView {
     //Returns: none
     public void viewMoveHelp() {
         //View the move helping guide
-        System.out.println("\nMove Helping Guide");
+        System.out.println("\nMove helping guide selected");
     }
     
     //The viewListHelp method
@@ -141,6 +143,6 @@ public class HelpMenuView {
     //Returns: none
     public void viewListHelp(){
         //View the list help guide
-        System.out.println("\nList Help Guide");
+        System.out.println("\nList help guide selected");
     }
 }
