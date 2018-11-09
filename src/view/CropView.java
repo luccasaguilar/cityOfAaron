@@ -49,6 +49,25 @@ public class CropView {
         System.out.format("You now own %d acres of land. ", cropData.getAcresOwned());
     }
     
+    public static void sellLandView() {
+        //Get the cost of sell land for this round
+        int price = CropControl.calcLandCost();
+        
+        //Prompt the user to enter the number of acres to sell
+        System.out.format("Land is selling for %d bushels per acre. %n", price);
+        System.out.format("\nHow many acres of land do you want to sell?");
+        
+        //Get the user's input and save it
+        int toSell;
+        toSell = keyboard.nextInt();
+        
+        //Call the sellLand() mehtod in the control layer to sell the land
+        CropControl.sellLand(price, toSell, cropData);
+        
+        //Output how many wheat we now own
+        System.out.format("You now own %d acres of land", cropData.getWheatInStore());
+    }
+    
     // The feedPeopleView method
     // Purpose: interface with the user input the number of wheat to set aside
     // Parameters: none
@@ -93,7 +112,7 @@ public class CropView {
         // output the amount of wheat left in storage
         System.out.format("\nYou now have %d wheat in store. ", cropData.getWheatInStore());
     }
-
+    
         // The runCropView method()
     // Purpose: runs the methods to manage the crops game
     // Parameters: none
