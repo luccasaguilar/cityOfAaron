@@ -35,8 +35,8 @@ public class CropView {
         int price = CropControl.calcLandCost();
 
         // Prompt the user to enter the number of acres to buy
-        System.out.format("Land is selling for %d bushels per acre.%n",price);
-        System.out.print("\nHow many acres of land do you wish to buy? "); 
+        System.out.format("\nLand is selling for %d bushels per acre.%n",price);
+        System.out.print("How many acres of land do you wish to buy? "); 
 
         //  Get the user’s input and save it.
         int toBuy;
@@ -46,7 +46,8 @@ public class CropView {
         CropControl.buyLand(price, toBuy, cropData);
         
         // output how much land we now own
-        System.out.format("You now own %d acres of land. ", cropData.getAcresOwned());
+        System.out.format("\nYou now own %d acres of land. ", cropData.getAcresOwned());
+        System.out.print("\n************************************");
     }
     
     public static void sellLandView() {
@@ -54,8 +55,8 @@ public class CropView {
         int price = CropControl.calcLandCost();
         
         //Prompt the user to enter the number of acres to sell
-        System.out.format("Land is selling for %d bushels per acre. %n", price);
-        System.out.format("\nHow many acres of land do you want to sell?");
+        System.out.format("\nLand is selling for %d bushels per acre. %n", price);
+        System.out.format("How many acres of land do you want to sell?");
         
         //Get the user's input and save it
         int toSell;
@@ -65,7 +66,8 @@ public class CropView {
         CropControl.sellLand(price, toSell, cropData);
         
         //Output how many wheat we now own
-        System.out.format("You now own %d acres of land", cropData.getWheatInStore());
+        System.out.format("\nYou now own %d acres of land.", cropData.getAcresOwned());
+        System.out.print("\n************************************");
     }
     
     // The feedPeopleView method
@@ -86,10 +88,11 @@ public class CropView {
         CropControl.feedPeople(wheatForFood, cropData);
         
         // output the number of bushels of grain set aside to feed the people
-        System.out.format("You set aside %d  bushels of grain to feed the people. ", cropData.getWheatForFood());
+        System.out.format("\nYou set aside %d  bushels of grain to feed the people. ", cropData.getWheatForFood());
         
         // output the amount of wheat left in storage
         System.out.format("\nYou now have %d wheat in store. ", cropData.getWheatInStore());
+        System.out.print("\n************************************");        
     }
     
     // The plantCropsView method
@@ -110,7 +113,7 @@ public class CropView {
         CropControl.plantCrops(acresToPlant, cropData);
         
         // output how much land is planted
-        System.out.format("You now have %d acres planted. ", cropData.getAcresPlanted());
+        System.out.format("\nYou now have %d acres planted. ", cropData.getAcresPlanted());
 
         // output the amount of wheat left in storage
         System.out.format("\nYou now have %d wheat in store. ", cropData.getWheatInStore());
@@ -123,9 +126,10 @@ public class CropView {
     public static void runCropView(){
         
         // call the buyLandView( ) method - 1
-        buyLandView( );
+        buyLandView();
         
         // call the SellLandView( ) method - 2
+        sellLandView();
         
         // call the feedPeopleView( ) method - 3
         feedPeopleView();
