@@ -27,7 +27,7 @@ public class CropControlRonTest {
         int wheatForFood = 10;
         CropData cropData = new CropData();
         cropData.setWheatInStore (400);
-        int expResult = 390;
+        int expResult = 10;
         int result = CropControl.feedPeople(wheatForFood, cropData);
         assertEquals(expResult, result); 
     }
@@ -69,7 +69,7 @@ public class CropControlRonTest {
         int wheatForFood = 100;
         CropData cropData = new CropData();
         cropData.setWheatInStore (400);
-        int expResult = 300;
+        int expResult = 100;
         int result = CropControl.feedPeople(wheatForFood, cropData);
         assertEquals(expResult, result);
     } 

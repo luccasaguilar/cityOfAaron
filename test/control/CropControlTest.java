@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Ronan Macedo
+ * @author Luccas
  */
 public class CropControlTest {
     
@@ -19,19 +19,18 @@ public class CropControlTest {
     }
 
     /**
-     * Test of setOffering method, of class CropControl.
-    
-    @Test
-    public void testSetOffering() {
-        System.out.println("setOffering");
-        int offering = 10;
-        CropData cropData = new CropData();
-        cropData.setHarvest(100);
-        int expResult = 10;
-        int result = CropControl.setOffering(offering, cropData);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+     * Test of calcLandCost method, of class CropControl.
      */
+    @Test
+    public void testCalcLandCost() {
+        System.out.println("calcLandCost");
+        int expResult = 0;
+        int result = CropControl.calcLandCost();
+        assertEquals(result, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    
+    
 }

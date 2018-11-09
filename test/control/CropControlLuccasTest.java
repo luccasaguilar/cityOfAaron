@@ -26,7 +26,7 @@ public class CropControlLuccasTest {
         int acresToPlant = 50;
         CropData cropData = new CropData();
         cropData.setPopulation(100);
-        cropData.setCropYield(200);
+        cropData.setAcresOwned(200);
         cropData.setWheatInStore(400);
         int expResult = 50;
         int result = CropControl.plantCrops(acresToPlant, cropData);
@@ -42,7 +42,7 @@ public class CropControlLuccasTest {
         int acresToPlant = -50;
         CropData cropData = new CropData();
         cropData.setPopulation(100);
-        cropData.setCropYield(200);
+        cropData.setAcresOwned(200);
         cropData.setWheatInStore(400);
         int expResult = -1;
         int result = CropControl.plantCrops(acresToPlant, cropData);
@@ -59,7 +59,7 @@ public class CropControlLuccasTest {
         int acresToPlant = 100;
         CropData cropData = new CropData();
         cropData.setPopulation(100);
-        cropData.setCropYield(80);
+        cropData.setAcresOwned(80);
         cropData.setWheatInStore(400);
         int expResult = -1;
         int result = CropControl.plantCrops(acresToPlant, cropData);
@@ -76,7 +76,7 @@ public class CropControlLuccasTest {
         int acresToPlant = 100;
         CropData cropData = new CropData();
         cropData.setPopulation(5);
-        cropData.setCropYield(200);
+        cropData.setAcresOwned(200);
         cropData.setWheatInStore(400);
         int expResult = -1;
         int result = CropControl.plantCrops(acresToPlant, cropData);
@@ -93,7 +93,7 @@ public class CropControlLuccasTest {
         int acresToPlant = 100;
         CropData cropData = new CropData();
         cropData.setPopulation(100);
-        cropData.setCropYield(200);
+        cropData.setAcresOwned(200);
         cropData.setWheatInStore(40);
         int expResult = -1;
         int result = CropControl.plantCrops(acresToPlant, cropData);
@@ -110,7 +110,7 @@ public class CropControlLuccasTest {
         int acresToPlant = 50;
         CropData cropData = new CropData();
         cropData.setPopulation(100);
-        cropData.setCropYield(50);
+        cropData.setAcresOwned(50);
         cropData.setWheatInStore(400);
         int expResult = 50;
         int result = CropControl.plantCrops(acresToPlant, cropData);
@@ -127,7 +127,7 @@ public class CropControlLuccasTest {
         int acresToPlant = 0;
         CropData cropData = new CropData();
         cropData.setPopulation(100);
-        cropData.setCropYield(200);
+        cropData.setAcresOwned(200);
         cropData.setWheatInStore(400);
         int expResult = 0;
         int result = CropControl.plantCrops(acresToPlant, cropData);
