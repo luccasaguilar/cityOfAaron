@@ -76,7 +76,7 @@ public class CropView {
     public static void feedPeopleView(){
         
         // Prompt the user to enter the the number of wheat to set aside
-        System.out.print("\nHow many wheats do you want to set aside? "); 
+        System.out.print("\nHow many bushels of grain do you want to set aside to feed the people? "); 
 
         //  Get the user’s input and save it.
         int wheatForFood;
@@ -85,8 +85,11 @@ public class CropView {
         // Call the feedPeople( ) method in the control layer to feed people
         CropControl.feedPeople(wheatForFood, cropData);
         
-        // output the number of wheat to set aside
-        System.out.format("You set aside. ", cropData.getWheatForFood());
+        // output the number of bushels of grain set aside to feed the people
+        System.out.format("You set aside %d  bushels of grain to feed the people. ", cropData.getWheatForFood());
+        
+        // output the amount of wheat left in storage
+        System.out.format("\nYou now have %d wheat in store. ", cropData.getWheatInStore());
     }
     
     // The plantCropsView method

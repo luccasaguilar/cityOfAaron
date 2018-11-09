@@ -159,10 +159,10 @@ public static int feedPeople(int wheatForFood, CropData cropData)
     
     //wheatInStorage = wheatInStorage – wheatForFood
     wheatInStore -= wheatForFood;
-    cropData.setWheatInStore(wheatInStore);
+    cropData.setWheatForFood(wheatForFood);
 
     //return wheatForFood and wheatInStorage
-    return wheatInStore;
+    return wheatForFood;
  }
 
 //purpose: set the offering percentage value
@@ -175,7 +175,7 @@ public static int setOffering(int percentage, CropData cropData)
     if(percentage > 100)
         return -1;
     
-    //if percentage < 100, return -1    
+    //if percentage < 100, return -1           s
     if(percentage < 0)
         return -1;
     
