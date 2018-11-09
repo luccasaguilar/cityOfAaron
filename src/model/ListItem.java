@@ -1,9 +1,9 @@
-    /*
+/*
 * The ListItem class file for the cityOfAaron project
 * CIT-260
 * Spring 2018
 * Team members: Luccas Aguilar, Ronan Macedo, Ronald Silva
- */
+*/
 package model;
 
 /**

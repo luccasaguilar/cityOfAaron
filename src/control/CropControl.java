@@ -100,7 +100,6 @@ public static int buyLand(int landPrice, int acresToBuy, CropData cropData)
 //population x 10 >= acres to plant,
 //wheat In Store >= acres to plant/2
 //Author: Luccas Aguilar
-//Will be tested by CropControlLuccasTest.java (temporaly)
 
 public static int plantCrops(int acresToPlant, CropData cropData)
  { 
