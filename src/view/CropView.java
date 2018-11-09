@@ -79,14 +79,16 @@ public class CropView {
     // Returns: none
     public static void runCropView(){
         
-        // call the buyLandView( ) method
+        // call the buyLandView( ) method - 1
         buyLandView( );
         
-        // call the plantCropsView( ) method
+        // call the SellLandView( ) method - 2
+        
+        // call the feedPeopleView( ) method - 3
+        
+        // call the plantCropsView( ) method - 4
         plantCropsView();
 
-        // add calls to the other crop view methods
-        // as they are written
     }
 
 }
