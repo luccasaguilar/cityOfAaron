@@ -112,11 +112,19 @@ public class CropView {
         // Call the plantCrops( ) method in the control layer to plant crops
         CropControl.plantCrops(acresToPlant, cropData);
         
-        // output how much land is planted
-        System.out.format("\nYou now have %d acres planted. ", cropData.getAcresPlanted());
+        // Checking if the process of the method is valid
+        if (CropControl.plantCrops(acresToPlant, cropData)==-1){
+            // Prompt the user to enter the number of acres to plant
+            System.out.print("\nWe were unable to process your information. Please try again later."); 
 
-        // output the amount of wheat left in storage
-        System.out.format("\nYou now have %d wheat in store. ", cropData.getWheatInStore());
+        } else {
+
+            // output how much land is planted
+            System.out.format("\nYou now have %d acres planted. ", cropData.getAcresPlanted());
+
+            // output the amount of wheat left in storage
+            System.out.format("\nYou now have %d wheat in store. ", cropData.getWheatInStore());
+        }
     }
     
     // The plantCropsView method
