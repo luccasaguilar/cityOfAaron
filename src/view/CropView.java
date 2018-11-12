@@ -96,7 +96,7 @@ public class CropView {
     }
     
     // The plantCropsView method
-    // Purpose: interface with the user input for planting land
+    // Purpose: interface with the user input the number of acres to plant
     // Parameters: none
     // Returns: none  
     // author Luccas
@@ -127,8 +127,8 @@ public class CropView {
         }
     }
     
-    // The plantCropsView method
-    // Purpose: interface with the user input for planting land
+    // The displayCropsReportView method
+    // Purpose: View a full game report
     // Parameters: none
     // Returns: none  
     // author Luccas
@@ -160,6 +160,7 @@ public class CropView {
     // Purpose: runs the methods to manage the crops game
     // Parameters: none
     // Returns: none
+    // author: Luccas
     public static void runCropView(){
         
         // call the displayCropsReportView( ) method - 1
