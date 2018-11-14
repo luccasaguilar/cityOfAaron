@@ -101,7 +101,7 @@ public class CropView {
     }
     
     // The plantCropsView method
-    // Purpose: interface with the user input for planting land
+    // Purpose: interface with the user input the number of acres to plant
     // Parameters: none
     // Returns: none  
     // author Luccas
@@ -117,15 +117,23 @@ public class CropView {
         // Call the plantCrops( ) method in the control layer to plant crops
         CropControl.plantCrops(acresToPlant, cropData);
         
-        // output how much land is planted
-        System.out.format("\nYou now have %d acres planted. ", cropData.getAcresPlanted());
+        // Checking if the process of the method is valid
+        if (CropControl.plantCrops(acresToPlant, cropData)==-1){
+            // Prompt the user to enter the number of acres to plant
+            System.out.print("\nWe were unable to process your information. Please try again later."); 
 
-        // output the amount of wheat left in storage
-        System.out.format("\nYou now have %d wheat in store. ", cropData.getWheatInStore());
+        } else {
+
+            // output how much land is planted
+            System.out.format("\nYou now have %d acres planted. ", cropData.getAcresPlanted());
+
+            // output the amount of wheat left in storage
+            System.out.format("\nYou now have %d wheat in store. ", cropData.getWheatInStore());
+        }
     }
     
-    // The plantCropsView method
-    // Purpose: interface with the user input for planting land
+    // The displayCropsReportView method
+    // Purpose: View a full game report
     // Parameters: none
     // Returns: none  
     // author Luccas
@@ -157,6 +165,7 @@ public class CropView {
     // Purpose: runs the methods to manage the crops game
     // Parameters: none
     // Returns: none
+    // author: Luccas
     public static void runCropView(){
         
         // call the displayCropsReportView( ) method - 1

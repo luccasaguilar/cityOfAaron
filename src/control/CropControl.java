@@ -159,6 +159,7 @@ public static int feedPeople(int wheatForFood, CropData cropData)
     //wheatInStorage = wheatInStorage – wheatForFood
     wheatInStore -= wheatForFood;
     cropData.setWheatForFood(wheatForFood);
+    cropData.setWheatInStore(wheatInStore);
 
     //return wheatForFood and wheatInStorage
     return wheatForFood;

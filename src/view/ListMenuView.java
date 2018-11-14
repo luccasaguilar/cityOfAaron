@@ -20,12 +20,12 @@ public class ListMenuView {
     private String theMenu;
     private int max;
          
-    // The DisplayPrintView method
-    // Purpose: displays the menu, gets the user's input, and does the 
+    // The ListMenuView method
+    // Purpose: displays the list menu, gets the user's input, and does the 
     //               selected action
     // Parameters: none
     // Returns: none
-    // =========================================================  
+    // Author: Luccas
     public ListMenuView(){
         theMenu = "\n" +
                       "**************************************\n" +
@@ -59,7 +59,7 @@ public class ListMenuView {
     // Purpose: gets the user's input
     // Parameters: none
     // Returns: integer - the option selected
-    // ===================================       
+    // Author: Luccas       
     public int getMenuOption(){
         // declare a variable to hold user’s input
         int userInput = 0;
@@ -82,7 +82,7 @@ public class ListMenuView {
     // Purpose: performs the selected action
     // Parameters: none
     // Returns: none
-    // ===================================       
+    // Author: Luccas       
     public void doAction(int option)
     {
          switch(option)
@@ -109,7 +109,7 @@ public class ListMenuView {
     // Purpose: List or view the animals in the storehouse
     // Parameters: none
     // Returns: none
-    // ===================================     
+    // Author: Luccas     
     public void listAnimals(){
         // List or view the animals in the storehouse
         System.out.println("\nList or view the animals in the storehouse option selected.");
@@ -119,7 +119,7 @@ public class ListMenuView {
     // Purpose: List or view the tools in the storehouse
     // Parameters: none
     // Returns: none
-    // ===================================     
+    //Author: Luccas     
     public void listTools(){
         // List or view the tools in the storehouse
         System.out.println("\nList or view the tools in the storehouse option selected.");
@@ -129,7 +129,7 @@ public class ListMenuView {
     // Purpose: List or view the provisions in the storehouse
     // Parameters: none
     // Returns: none
-    // ===================================     
+    // Author: Luccas      
     public void listProvisions(){
         // List or view the provisions in the storehouse
         System.out.println("\nList or view the provisions in the storehouse option selected.");
@@ -139,7 +139,7 @@ public class ListMenuView {
     // Purpose: List or view the provisions in the storehouse
     // Parameters: none
     // Returns: none
-    // ===================================     
+    // Author: Luccas     
     public void listTeam(){
         // List or view the developers of this game
         System.out.println("\nLuccas Aguilar, Ronan Macedo and Ronand Silva");
