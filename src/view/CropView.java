@@ -50,6 +50,11 @@ public class CropView {
         System.out.print("\n************************************");
     }
     
+    // The buyLandView method
+    // Purpose: interface with the user input for selling land
+    // Parameters: none
+    // Returns: none
+    // author Ronan
     public static void sellLandView() {
         //Get the cost of sell land for this round
         int price = CropControl.calcLandCost();
