@@ -161,8 +161,8 @@ public class MainMenuView {
     public void displayHelpMenuView()
     {
             System.out.println("\nDisplay help menu view option selected.");
-            DisplayHelpMenuView hmv = new DisplayHelpMenuView();
-            hmv.DisplayHelpMenuView();
+            HelpMenuView hmv = new HelpMenuView();
+            hmv.displayHelpMenuView();
     }
     
     // The displaySaveGameView method
