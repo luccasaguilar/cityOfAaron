@@ -127,7 +127,7 @@ public class GameMenuView {
         //View the game menu list
         //System.out.println("\nGame list");
         ListMenuView lmv = new ListMenuView();
-        lmv.ListMenuView();
+        lmv.displayMenu();
     }
     
     //The moveToNewLocation method

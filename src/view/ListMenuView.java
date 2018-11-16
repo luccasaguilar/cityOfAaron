@@ -14,12 +14,8 @@ import cityofaaron.CityOfAaron;
  *
  * @author Luccas
  */
-public class ListMenuView {
-    Scanner keyboard = new Scanner(System.in);
-    
-    private String theMenu;
-    private int max;
-         
+public class ListMenuView extends MenuView {
+
     // The ListMenuView method
     // Purpose: displays the list menu, gets the user's input, and does the 
     //               selected action
@@ -27,7 +23,7 @@ public class ListMenuView {
     // Returns: none
     // Author: Luccas
     public ListMenuView(){
-        theMenu = "\n" +
+        super("\n" +
                       "**************************************\n" +
                       "* CITY OF AARON: DISPLAY/PRINT MENU  *\n" +
                       "**************************************\n" +
@@ -35,55 +31,16 @@ public class ListMenuView {
                       " 2 - List or view the tools in the storehouse\n" +
                       " 3 - List or view the provisions in the storehouse\n" +
                       " 4 - List or view the developers of this game\n" +
-                      " 5 - Return to the Game menu\n";
-
-        max = 5;
+                      " 5 - Return to the Game menu\n",5);
     } 
 
-    public void ListMenuView(){    
-        int menuOption;
-        do {
-            // Display the menu
-            System.out.println(theMenu);
-
-            // Prompt the user and get the user’s input
-            menuOption = getMenuOption();
-
-            // Perform the desired action
-            doAction(menuOption);
-
-        } while (menuOption != max);
-    }
     
-    // The getMenuOption method
-    // Purpose: gets the user's input
-    // Parameters: none
-    // Returns: integer - the option selected
-    // Author: Luccas       
-    public int getMenuOption(){
-        // declare a variable to hold user’s input
-        int userInput = 0;
-        final int MAX = 5;
-        Scanner keyboard = new Scanner(System.in );
-
-        // begin loop
-        do{
-            // get user input from the keyboard
-            userInput = keyboard.nextInt();
-            // if it is not a valid value, output an error message
-            if(userInput < 1 || userInput > MAX)
-                System.out.println("Error: you must select 1, 2, 3, 4, or 5");
-           // loop back to the top of the loop if input was not valid
-        // end loop
-        } while (userInput < 1 || userInput > MAX);
-        return userInput;
-    }
     // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
     // Returns: none
     // Author: Luccas       
-    public void doAction(int option)
+    @Override public void doAction(int option)
     {
          switch(option)
         {
