@@ -1,6 +1,6 @@
 // The MenuView class – base abstract class for all menu views
-// Author: Luccas Aguilar
-// Date last modified: March 2018
+// Author: Luccas Aguilar, Ronan Macedo, Ronald Silva
+// Date last modified: November 2018
 //-------------------------------------------------------------
 package view;
 
@@ -41,7 +41,7 @@ public abstract class MenuView implements ViewInterface
         } while (menuOption != max);
     }
     
-     // The getMenuOption method
+    // The getMenuOption method
     // Purpose: gets the user's input
     // Parameters: none
     // Returns: integer - the option selected
