@@ -25,9 +25,12 @@ public class CityOfAaron
 
     public static void main(String[] args) {
    
+        //MainMenuView mmv = new MainMenuView();
+        //mmv.displayMenuView();       
         MainMenuView mmv = new MainMenuView();
-        mmv.displayMenuView();       
-    
+        mmv.displayMenu();       
+
+        
     }
     
     public static void setGame(Game _game) {
