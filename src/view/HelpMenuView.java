@@ -14,23 +14,13 @@ import cityofaaron.CityOfAaron;
  *
  * @author Ronan Macedo
  */
-public class HelpMenuView {
-    Scanner keyboard = new Scanner(System.in);
-    
-    private String helpMenu;
-    private int max;
-    
-    //The HelpMenuView method
-    //Purpose: Display the help menu, gets the user's input, and does the 
-    //         selected action
-    //Parameters: none
-    //Returns: none
-
+public class HelpMenuView extends MenuView {
     /**
-     *
+     *@see Help Menu
      */
-    public HelpMenuView(){
-        helpMenu = "\n" +
+    public HelpMenuView()
+    {
+                super("\n" +
                       "**************************************\n" +
                       "******CITY OF AARON: HELP MENU********\n" +
                       "**************************************\n" +
@@ -39,57 +29,17 @@ public class HelpMenuView {
                       "3 - How do I view the map?\n" +
                       "4 - How do I move to another location?\n" +
                       "5 - How do I display a list of animals, provisions and tools in the city storehouse?\n" +
-                      "6 - Back to the Main Menu\n";
-        max = 6;
-    }
-    
-    /**
-     *
-     */
-    public void displayHelpMenuView(){
-        int menuOption;
-        do {
-            //Display the help menu
-            System.out.println(helpMenu);
-            
-            //Prompt the user and the get the user's input
-            menuOption = getMenuOption();
-            
-            //Perform the desired action
-            doAction(menuOption);
-   
-        } while (menuOption != max); 
-    }
-    
-    //The getMenuOption method
-    //Purpose: gets the user's input
-    //Parameters: none
-    //Returns: the selected option - integer
-    public int getMenuOption(){
-        //declare a variable to hold user's input
-        int userInput = 0;
-        final int MAX = 6;
-        Scanner keyboard = new Scanner(System.in);
-        
-        //begin loop
-        do{
-            //get user input
-            userInput = keyboard.nextInt();
-            //if it is not a valid value, output an error message
-            if (userInput < 1 || userInput > MAX){
-                System.out.println("Error: you must select 1, 2, 3, 4, 5, or 6");
-            //loop back to the top of the loop
-            }
-        //end loop
-        } while(userInput < 1 || userInput > MAX);
-        return userInput;
+                      "6 - Back to the Main Menu\n",
+        6);
     }
     
     //The doAction method
     //Purpose: performs the selected action
     //Parameters: none
     //Returns: none
-    public void doAction(int option){
+    @Override
+   public void doAction(int option)
+   {
         switch(option){
             case 1: //View the game goals
                 viewGoals();
@@ -144,5 +94,15 @@ public class HelpMenuView {
     public void viewListHelp(){
         //View the list help guide
         System.out.println("\nList help guide selected");
+    }
+    
+    //The backMainMenu method
+    //Purpose: Back to the main menu
+    //Parameters: none
+    //Returns: none
+    public void backMainMenu() {
+        System.out.println("\nDisplay help menu view option selected.");
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenu();
     }
 }
