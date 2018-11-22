@@ -109,7 +109,7 @@ public class MainMenuView extends MenuView {
     {
             System.out.println("\nDisplay help menu view option selected.");
             HelpMenuView hmv = new HelpMenuView();
-            hmv.displayHelpMenuView();
+            hmv.displayMenu();
     }
     
     // The displaySaveGameView method

@@ -21,7 +21,7 @@ public class Game implements Serializable {
     //getPlayer(:void): Player
     private Player thePlayer;
     private CropData cropData;
-   
+    private Map map;
     
     public Game() {}
     
@@ -41,6 +41,13 @@ public class Game implements Serializable {
         return cropData;
     }
 
+    public void setMap(Map _map) {
+       map = _map; 
+    }
+
+    public Map getMap(){
+        return map;
+    }
 
     
 }
