@@ -9,6 +9,7 @@ package control;
 
 import model.*;
 import cityofaaron.CityOfAaron;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,12 +21,11 @@ public class GameControl {
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
     
+    // Create a new Game object.
+    private static Game game = new Game();
+    
     public static void createNewGame(String _name)
     {
-    
-        // Create a new Game object.
-        Game game = new Game();
-
         // create the player object and set the name
         Player player = new Player();
         player.setName(_name);
@@ -46,9 +46,6 @@ public class GameControl {
         // create and initialize a CropData object
         public static void createCropDataObject()
     {
-        // Create a new Game object.
-        Game game = new Game();
-        
         // save a reference to it in the Game object
         CropData cropData = new CropData();
         
@@ -74,8 +71,6 @@ public class GameControl {
     // Returns: none
     public static void createMap()   
     {
-         // Create a new Game object.
-        Game game = new Game();
         // create the Map object, it is 5 x 5
         // refer to the Map constructor
         Map theMap = new Map(MAX_ROW, MAX_COL);
@@ -208,4 +203,23 @@ public class GameControl {
 
     }
     
+    // The createToolsList method
+    // Purpose: creates the tools list objects
+    // Parameters: none
+    // Returns: none
+    public static void createToolList()
+    {
+        
+        ArrayList<ListItem> tools = new ArrayList<>();
+        
+        tools.add(new ListItem("hammer", 40));
+        tools.add(new ListItem("axe", 30));
+        tools.add(new ListItem("shovel", 50));
+        tools.add(new ListItem("pitchfork", 45));
+        tools.add(new ListItem("sickle", 15));
+        tools.add(new ListItem("mattock", 20));
+       
+        game.setTools(tools);  
+    }
+
 }
