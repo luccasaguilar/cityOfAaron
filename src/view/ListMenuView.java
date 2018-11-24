@@ -75,7 +75,17 @@ public class ListMenuView extends MenuView {
     // Author: Luccas     
     public void listAnimals(){
         // List or view the animals in the storehouse
-        System.out.println("\nList or view the animals in the storehouse option selected.");
+        //System.out.println("\nList or view the animals in the storehouse option selected.");
+        Game theGame = CityOfAaron.getGame();
+        ArrayList<ListItem> animals = theGame.getAnimals();
+        
+	System.out.format("%-16s%-24s\n", "Animal", "Quantity");
+        for(ListItem animal : animals) { 
+		
+         // List or view the tools in the storehouse
+        //System.out.println(tool.toString());
+        System.out.format("%-16s%-24s\n", animal.getName(), animal.getNumber());
+        }
     }
     
     // The listTools method

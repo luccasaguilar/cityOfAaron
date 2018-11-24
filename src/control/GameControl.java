@@ -44,6 +44,9 @@ public class GameControl {
         //create tool list
         createToolList();
         
+        //create animal list
+        createAnimalList();
+        
         // when all is done, save a reference to the Game object
         CityOfAaron.setGame(game);
         
@@ -225,6 +228,24 @@ public class GameControl {
         tools.add(new ListItem("mattock", 20));
        
         game.setTools(tools);  
+    }
+    
+    // The createToolsList method
+    // Purpose: creates the tools list objects
+    // Parameters: none
+    // Returns: none
+    public static void createAnimalList()
+    {
+        
+        ArrayList<ListItem> animals = new ArrayList<>();
+        
+        animals.add(new ListItem("Pig", 100));
+        animals.add(new ListItem("Goat", 200));
+        animals.add(new ListItem("Horse", 500));
+        animals.add(new ListItem("Cow", 2000));
+        animals.add(new ListItem("Chicken", 800));
+          
+        game.setAnimals(animals);  
     }
 
 }
