@@ -18,7 +18,12 @@ public class ListItem implements Serializable{
     private String name;
     private Integer number;
     
-    public ListItem() {}
+ 
+    public ListItem(String name, int number) {
+		super();
+		name = name;
+		number = number;
+	}
     
     public String getName(){
         return name;
@@ -35,4 +40,9 @@ public class ListItem implements Serializable{
     public void setNumber(Integer _number){
         number = _number;
     }
+    
+    @Override
+	public String toString() {
+		return name + "- quantity: " + number;
+	}
 }

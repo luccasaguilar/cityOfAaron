@@ -12,6 +12,7 @@ package model;
  */
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Game implements Serializable {
     
@@ -22,6 +23,7 @@ public class Game implements Serializable {
     private Player thePlayer;
     private CropData cropData;
     private Map map;
+    private ArrayList<ListItem> tools;
     
     public Game() {}
     
@@ -48,6 +50,12 @@ public class Game implements Serializable {
     public Map getMap(){
         return map;
     }
-
     
+    public void setTools(ArrayList<ListItem> tools) {
+		tools = new ArrayList<ListItem>(tools);
+	}
+
+    public ArrayList<ListItem> getTools() {
+		return tools;
+	}
 }

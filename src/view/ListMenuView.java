@@ -9,12 +9,18 @@ package view;
 import control.GameControl;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
+import model.ListItem;
+import java.util.ArrayList;
+import model.Game;
 
 /**
  *
  * @author Luccas
  */
 public class ListMenuView extends MenuView {
+    
+     // Create a new Game object.
+    private static Game game = new Game();
 
     // The ListMenuView method
     // Purpose: displays the list menu, gets the user's input, and does the 
@@ -74,12 +80,20 @@ public class ListMenuView extends MenuView {
     
     // The listTools method
     // Purpose: List or view the tools in the storehouse
-    // Parameters: none
+        // Parameters: none
     // Returns: none
     //Author: Luccas     
     public void listTools(){
-        // List or view the tools in the storehouse
-        System.out.println("\nList or view the tools in the storehouse option selected.");
+         
+        Game theGame = CityOfAaron.getGame();
+        ArrayList<ListItem> tools = theGame.getTools();
+        
+	for(ListItem tool : tools) { 
+		
+         // List or view the tools in the storehouse
+        System.out.println(tool.toString()); 		
+	      }
+        
     }
 
     // The listProvisions method
