@@ -88,12 +88,14 @@ public class ListMenuView extends MenuView {
         Game theGame = CityOfAaron.getGame();
         ArrayList<ListItem> tools = theGame.getTools();
         
-	for(ListItem tool : tools) { 
+	System.out.format("%-16s%-24s\n", "Tool", "Quantity");
+        for(ListItem tool : tools) { 
 		
          // List or view the tools in the storehouse
-        System.out.println(tool.toString()); 		
-	      }
-        
+        //System.out.println(tool.toString());
+        System.out.format("%-16s%-24s\n", tool.getName(), tool.getNumber());
+        }
+   
     }
 
     // The listProvisions method

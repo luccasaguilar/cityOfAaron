@@ -19,10 +19,10 @@ public class ListItem implements Serializable{
     private Integer number;
     
  
-    public ListItem(String name, int number) {
+    public ListItem(String _name, int _number) {
 		super();
-		name = name;
-		number = number;
+		name = _name;
+		number = _number;
 	}
     
     public String getName(){
@@ -44,5 +44,6 @@ public class ListItem implements Serializable{
     @Override
 	public String toString() {
 		return name + "- quantity: " + number;
+                
 	}
 }

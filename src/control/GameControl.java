@@ -41,6 +41,9 @@ public class GameControl {
         //create map object
         createMap();
         
+        //create tool list
+        createToolList();
+        
         // when all is done, save a reference to the Game object
         CityOfAaron.setGame(game);
         

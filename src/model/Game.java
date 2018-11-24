@@ -51,8 +51,8 @@ public class Game implements Serializable {
         return map;
     }
     
-    public void setTools(ArrayList<ListItem> tools) {
-		tools = new ArrayList<ListItem>(tools);
+    public void setTools(ArrayList<ListItem> _tools) {
+		tools = new ArrayList<ListItem>(_tools);
 	}
 
     public ArrayList<ListItem> getTools() {
