@@ -8,7 +8,7 @@ package model;
 
 /**
  *
- * @author Luccas
+ * @author Luccas Aguilar
  */
 
 import java.io.Serializable;
@@ -20,7 +20,7 @@ public class ListItem implements Serializable{
     
  
     public ListItem(String _name, int _number) {
-		super();
+		//super();
 		name = _name;
 		number = _number;
 	}

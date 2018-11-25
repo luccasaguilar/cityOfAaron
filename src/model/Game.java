@@ -60,7 +60,7 @@ public class Game implements Serializable {
 		return tools;
 	}
 
-        public void setAnimals(ArrayList<ListItem> _animals) {
+    public void setAnimals(ArrayList<ListItem> _animals) {
 		animals = new ArrayList<ListItem>(_animals);
 	}
 
