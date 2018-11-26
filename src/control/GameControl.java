@@ -47,6 +47,9 @@ public class GameControl {
         //create animal list
         createAnimalList();
         
+        //create provision list
+        createProvisionList();
+        
         // when all is done, save a reference to the Game object
         CityOfAaron.setGame(game);
         
@@ -230,8 +233,8 @@ public class GameControl {
         game.setTools(tools);  
     }
     
-    // The createToolsList method
-    // Purpose: creates the tools list objects
+    // The createAnimalsList method
+    // Purpose: creates the animal list objects
     // Parameters: none
     // Returns: none
     public static void createAnimalList()
@@ -247,5 +250,23 @@ public class GameControl {
           
         game.setAnimals(animals);  
     }
-
+    
+    // The createProvisionList method
+    // Purpose: creates the provision list of objects
+    // Parameters: none
+    // Returns: none
+    public static void createProvisionList()
+    {
+        
+        ArrayList<ListItem> provisions = new ArrayList<>();
+        
+        provisions.add(new ListItem("Timber", 50));
+        provisions.add(new ListItem("Ore", 30));
+        provisions.add(new ListItem("Oil", 80));
+        provisions.add(new ListItem("Drinking Water", 90));
+        provisions.add(new ListItem("Honey", 50));
+        provisions.add(new ListItem("Salt", 50));
+        
+        game.setProvisions(provisions);
+    }
 }
