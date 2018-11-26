@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class ListItem implements Serializable{
     
     private String name;
-    private Integer number;
+    private int number;
     
  
     public ListItem(String _name, int _number) {
@@ -33,11 +33,11 @@ public class ListItem implements Serializable{
         name = _name;
     }
 
-    public Integer getNumber(){
+    public int getNumber(){
         return number;
     }
     
-    public void setNumber(Integer _number){
+    public void setNumber(int _number){
         number = _number;
     }
 }
