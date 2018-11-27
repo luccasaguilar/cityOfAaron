@@ -115,7 +115,17 @@ public class ListMenuView extends MenuView {
     // Author: Luccas      
     public void listProvisions(){
         // List or view the provisions in the storehouse
-        System.out.println("\nList or view the provisions in the storehouse option selected.");
+        //System.out.println("\nList or view the provisions in the storehouse option selected.");
+        Game theGame = CityOfAaron.getGame();
+        ArrayList<ListItem> provisions = theGame.getProvisions();
+        
+	System.out.format("%-16s%-24s\n", "Provision", "Quantity");
+        for(ListItem provision : provisions) { 
+		
+         // List or view the tools in the storehouse
+        //System.out.println(tool.toString());
+        System.out.format("%-16s%-24s\n", provision.getName(), provision.getNumber());
+        }
     }
 
     // The listTeam method
