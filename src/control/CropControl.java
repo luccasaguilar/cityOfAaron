@@ -7,6 +7,7 @@ package control;
 
 import java.util.Random;
 import model.*;
+import exceptions.*;
 
 
 public class CropControl
@@ -66,16 +67,16 @@ public static int calcLandCost()
 // Returns: the number of acres after the purchase
 // Pre-conditions: acres to buy must be positive
 // and wheat In Store >= total land price (acresToBuy x landPrice)
-public static int buyLand(int landPrice, int acresToBuy, CropData cropData)
+public static int buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException
  { 
     //if acresToBuy < 0, return -1
     if(acresToBuy < 0)
-        return -1;
+        throw new CropException("A negative value was input");
 
     //If wheatInStore < (acresToBuy x landPrice), return -1
     int wheatInStore = cropData.getWheatInStore();
     if(wheatInStore < (landPrice * acresToBuy))
-        return -1;
+        throw new CropException("There is insufficient wheat to buy this much land");
     
     //acresOwned = acresOwned + acresToBuy
     int owned = cropData.getAcresOwned();
