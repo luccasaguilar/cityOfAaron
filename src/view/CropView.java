@@ -98,15 +98,22 @@ public class CropView {
     // Returns: none  
     // author Ron Silva
     public static void feedPeopleView(){
-        
-        // Prompt the user to enter the the number of wheat to set aside
-        System.out.print("\nHow many bushels of grain do you want to set aside to feed the people? "); 
+       
 
         //  Get the user’s input and save it.
         int wheatForFood;
         wheatForFood  = keyboard.nextInt();
-
-        // Call the feedPeople( ) method in the control layer to feed people
+        
+        boolean paramsNotOkay;
+        do
+        {
+             paramsNotOkay = false;
+       // Prompt the user to enter the the number of wheat to set aside
+        System.out.print("\nHow many bushels of grain do you want to set aside to feed the people? ");  
+       wheatForFood = keyboard.nextInt();
+       try
+       {
+            // Call the feedPeople( ) method in the control layer to feed people
         CropControl.feedPeople(wheatForFood, cropData);
         
         // output the number of bushels of grain set aside to feed the people
@@ -114,7 +121,17 @@ public class CropView {
         
         // output the amount of wheat left in storage
         System.out.format("\nYou now have %d wheat in store. ", cropData.getWheatInStore());
-        System.out.print("\n************************************");        
+        System.out.print("\n************************************"); 
+        }
+        catch(CropException e)
+        {
+             System.out.println("I am sorry master, I cannot do this.");
+             System.out.println(e.getMessage());
+             paramsNotOkay = true;
+        }
+        } while(paramsNotOkay);
+
+               
     }
     
     // The plantCropsView method

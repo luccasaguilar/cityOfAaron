@@ -146,16 +146,18 @@ public static int plantCrops(int acresToPlant, CropData cropData)
 //pre-conditions: must be a positive number.
 //and wheat is storage >total of wheat set aside to feet people.
 
-public static int feedPeople(int wheatForFood, CropData cropData)
- { 
-    //if wheatForFood < 0, return -1 
-    if (wheatForFood < 0)
-        return -1;
+public static int feedPeople(int wheatForFood, CropData cropData) throws CropException
 
-    //If wheatInStorage < wheatForFood return -1 
+ { 
+    //if wheatForFood < 0, Return A negative value was input
+    if (wheatForFood < 0)
+        throw new CropException("A negative value was input");
+
+    //If wheatInStorage < wheatForFood return There is insufficient wheat to feed the People 
     int wheatInStore = cropData.getWheatInStore();
     if(wheatInStore < wheatForFood)
-        return -1;
+        throw new CropException("There is insufficient wheat in Store");
+
     
     //wheatInStorage = wheatInStorage – wheatForFood
     wheatInStore -= wheatForFood;
