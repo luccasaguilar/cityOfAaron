@@ -101,27 +101,28 @@ public static int buyLand(int landPrice, int acresToBuy, CropData cropData) thro
 //population x 10 >= acres to plant,
 //wheat In Store >= acres to plant/2
 //Author: Luccas Aguilar
+// updated at 11/30/2018 to include exception
 
-public static int plantCrops(int acresToPlant, CropData cropData)
+public static int plantCrops(int acresToPlant, CropData cropData) throws CropException
  { 
     //If acresToPlant < 0, return -1
     if(acresToPlant < 0)
-        return -1;
+        throw new CropException("A negative value was input");
 
     //If acresCity < acresToPlant, return -1
     int acresCity = cropData.getAcresOwned();
     if(acresCity < acresToPlant)
-        return -1;
+        throw new CropException("There is insufficient land to plant this much land");
     
     //If acresToPlant > population x 10, return -1
     int population = cropData.getPopulation();
     if(acresToPlant > (population * 10))
-        return -1;
+        throw new CropException("There is insufficient population to plant this much land");
 
     //If wheatInStore < acresPlanted/2, return -1
     int wheatInStore = cropData.getWheatInStore();
     if(wheatInStore < (acresToPlant /2))
-        return -1;
+        throw new CropException("There is insufficient wheat in store to plant this much land");
     
     //costToPlant = acresToPlant/2
     int costToPlant = acresToPlant/2;
