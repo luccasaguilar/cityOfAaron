@@ -36,16 +36,16 @@ public static int calcLandCost()
 // Returns: the number of acres owned after the sale
 // Pre-conditions: acres to sell must be positive
 // and <= acresOwned
- public static int sellLand(int landPrice, int acresToSell, CropData cropData)
+ public static int sellLand(int landPrice, int acresToSell, CropData cropData) throws CropException
  { 
-    //if acresToSell < 0, return -1
+    //if acresToSell < 0, show "A negative value was input"
     if(acresToSell < 0)
-        return -1;
+        throw new CropException("A negative value was input");
 
-    //if acresToSell > acresOwned, return -1
+    //if acresToSell > acresOwned, show "There is insufficient acres to sell this much land"
     int owned = cropData.getAcresOwned();
     if(acresToSell > owned)
-        return -1;
+        throw new CropException("There is insufficient acres to sell this much land");
     
     //acresOwned = acresOwned - acresToSell
     owned -= acresToSell;
@@ -63,7 +63,7 @@ public static int calcLandCost()
 // The buyLand method
 // Purpose: To buy land
 // Parameters: the price of land, the number of acres to buy.
-//    and a reference to a CropData object
+// and a reference to a CropData object
 // Returns: the number of acres after the purchase
 // Pre-conditions: acres to buy must be positive
 // and wheat In Store >= total land price (acresToBuy x landPrice)
