@@ -75,18 +75,28 @@ public class CropView {
         
         //Prompt the user to enter the number of acres to sell
         System.out.format("\nLand is selling for %d bushels per acre. %n", price);
-        System.out.format("How many acres of land do you want to sell?");
         
         //Get the user's input and save it
         int toSell;
-        toSell = keyboard.nextInt();
-        
-        //Call the sellLand() mehtod in the control layer to sell the land
-        CropControl.sellLand(price, toSell, cropData);
-        
-        //Output how many wheat we now own
-        System.out.format("\nYou now own %d acres of land.", cropData.getAcresOwned());
-        System.out.print("\n************************************");
+        boolean paramsNotOkay;
+        do {
+            paramsNotOkay = false;
+            System.out.format("How many acres of land do you want to sell?");
+            toSell = keyboard.nextInt();
+            try {
+                //Call the sellLand() mehtod in the control layer to sell the land
+                CropControl.sellLand(price, toSell, cropData);
+                
+                //Output how many acres we now own
+                System.out.format("\nYou now own %d acres of land.", cropData.getAcresOwned());
+                System.out.print("\n************************************");
+                } 
+            catch (CropException e) {
+                System.out.println("I am sorry master, I cannot do this.");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+            } 
+            }  while(paramsNotOkay);
     }
     
     // The feedPeopleView method
