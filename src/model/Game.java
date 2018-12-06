@@ -27,6 +27,15 @@ public class Game implements Serializable {
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> provisions;
     
+    static String readFirstLineFromFile(String path) throws IOException
+    {
+        try (BufferedReader br = new BufferedReader(new FileReader(path)))
+        {
+            FileInputStream fips = new FileInputStream(filePath);
+            ObjectInputStream input = new ObjectInputStream(fips);
+        }
+    }
+    
     public Game() {}
     
     public void setPlayer(Player _thePlayer) {
@@ -76,5 +85,4 @@ public class Game implements Serializable {
     public ArrayList<ListItem> getProvisions() {
 		return provisions;
 	}
-    
 }
