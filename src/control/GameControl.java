@@ -1,4 +1,4 @@
-    // Source code for the GameControl class
+// Source code for the GameControl class
 // The GameControl class is a member of the controllayer
 // Methods in the  GameControl class manage Game objects
 // Author: Luccas Aguilar, Ronan Macedo, Ronald Silva
@@ -268,5 +268,26 @@ public class GameControl {
         provisions.add(new ListItem("Salt", 50));
         
         game.setProvisions(provisions);
+    }
+    
+    //the getSavedGame method 
+    //Purpose: load a saved game from disk
+    //Parameters: the file path
+    //Returns: none
+    //Side Effect: the game references in the driver is updated
+    public static void getSavedGame(String filePath) 
+    {
+        Game game = null;
+        
+        try (FileInputStream fips = new FileInputStream(filePath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            Game = (Game) input.readObject();
+            CityOfAaron.setGame(game);
+        } 
+        catch(Exception e)
+        {
+            System.out.println("\n There was an error reading the saved game file");
+        }
     }
 }
