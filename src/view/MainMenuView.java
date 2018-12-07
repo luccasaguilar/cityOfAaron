@@ -2,7 +2,7 @@
 * The MainMenuView class - part of the view layer file for the cityOfAaron project
 * Object of this class manages the main menu
 * Author: Luccas Aguilar, Ronan Macedo, Ronald Silva
-*Date last modified: 01 NOV 2018
+*Date last modified: 07 DEC 2018
 */
 package view;
 
@@ -97,15 +97,18 @@ public class MainMenuView extends MenuView {
     // ===================================     
     public void startSavedGame()
     {
-        String filepath = keyboard.next();
-        //get rid of nl character left in the stream
         
+     
         //prompt user and get a file path 
+        String filepath = keyboard.next();
         
         //call the getSavedGame() method in the GameControl class to load the game
+        GameControl.getSavedGame(filepath);
         
         //display the game menu for the loaded game
-        
+        // Display the Game menu
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenu();
     }
     
       // The displayHelpMenuView method

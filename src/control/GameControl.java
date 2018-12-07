@@ -2,7 +2,7 @@
 // The GameControl class is a member of the controllayer
 // Methods in the  GameControl class manage Game objects
 // Author: Luccas Aguilar, Ronan Macedo, Ronald Silva
-// Date Last modified: 01 Nov 2018
+// Date Last modified: 07 Dec 2018
 // ==============================================================
 
 package control;
@@ -11,7 +11,10 @@ import model.*;
 import cityofaaron.CityOfAaron;
 import java.util.ArrayList;
 import model.ListItem;
-
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 
 /**
  *
@@ -275,19 +278,42 @@ public class GameControl {
     //Parameters: the file path
     //Returns: none
     //Side Effect: the game references in the driver is updated
-    public static void getSavedGame(String filePath) 
+    public static void getSavedGame(String _filepath) 
     {
         Game game = null;
         
-        try (FileInputStream fips = new FileInputStream(filePath))
+        try (FileInputStream fips = new FileInputStream(_filepath))
         {
             ObjectInputStream input = new ObjectInputStream(fips);
-            Game = (Game) input.readObject();
+            game = (Game) input.readObject();
             CityOfAaron.setGame(game);
         } 
         catch(Exception e)
         {
             System.out.println("\n There was an error reading the saved game file");
+        }
+    }
+    
+    
+    //the saveGame method 
+    //Purpose: save a game to disk
+    //Parameters: game, the file path
+    //Returns: none
+    //Side Effect: the game references in the driver is created
+    public static void saveGame(Game _game, String _filepath) 
+    {
+      
+        try (FileOutputStream fips = new FileOutputStream(_filepath))
+        {
+            ObjectOutputStream output = new ObjectOutputStream(fips);
+            //game = (Game) output.readObject();
+            output.writeObject(game);
+            //output.writeObject("Test");
+            output.close();
+        } 
+        catch(Exception e)
+        {
+            System.out.println("\n There was an error saving the game file");
         }
     }
 }

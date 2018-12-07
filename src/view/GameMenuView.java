@@ -2,12 +2,14 @@
 * The GameMenuView class - part of the view layer file for the cityOfAaron project
 * Object of this class manages the interaction with the user
 * Author: Luccas Aguilar, Ronan Macedo, Ronald Silva
-*Date last modified: 07 NOV 2018
+*Date last modified: 07 DEC 2018
 */
 package view;
 
+import cityofaaron.CityOfAaron;
 import java.util.Scanner;
 import model.Game;
+import control.*;
 
 
 
@@ -31,7 +33,8 @@ public class GameMenuView extends MenuView {
                       "**************************************\n" +
                       " 1 - List or view the game map\n" +
                       " 2 - List or view the game menu list\n" +
-                      " 3 - List or view the move to new location\n" +
+                      //" 3 - List or view the move to new location\n" +
+                      " 3 - Save Game\n" +  
                       " 4 - List or view the game manage crops\n" +
                       " 5 - Return to the Main menu\n",
 
@@ -53,11 +56,14 @@ public class GameMenuView extends MenuView {
             case 2: // view the game menu list
                 viewList();
                 break;
-            case 3: // move to new location in the game
-                moveToNewLocation();
-                break;
+           // case 3: // move to new location in the game
+           //     moveToNewLocation();
+           //     break;
             case 4: // manage the crops
                 manageCrops();
+                break;
+            case 3: // manage the crops
+                saveGame();
                 break;
             case 5: // return to main menu
                 return;
@@ -105,6 +111,20 @@ public class GameMenuView extends MenuView {
        
         CropView crop = new CropView();
         crop.runCropView();
+    }
+
+    //The saveGame method
+    //Purpose: View manage crops
+    //Parameters: none
+    //Returns: none
+    public void saveGame(){
+        //View the manage crops
+        System.out.println("\nSave Game");
+        
+        Game theGame = CityOfAaron.getGame();
+       
+        String filepath = keyboard.next();
+        GameControl.saveGame(theGame, filepath);
     }
 
 }

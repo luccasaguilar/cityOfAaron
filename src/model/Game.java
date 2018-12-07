@@ -3,6 +3,7 @@
 * CIT-260
 * Spring 2018
 * Team members: Luccas Aguilar, Ronan Macedo, Ronald Silva
+* Date last modified: 07 DEC 2018
  */
 package model;
 
@@ -13,6 +14,13 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import exceptions.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Game implements Serializable {
     
@@ -27,15 +35,7 @@ public class Game implements Serializable {
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> provisions;
     
-    static String readFirstLineFromFile(String path) throws IOException
-    {
-        try (BufferedReader br = new BufferedReader(new FileReader(path)))
-        {
-            FileInputStream fips = new FileInputStream(filePath);
-            ObjectInputStream input = new ObjectInputStream(fips);
-        }
-    }
-    
+  
     public Game() {}
     
     public void setPlayer(Player _thePlayer) {
