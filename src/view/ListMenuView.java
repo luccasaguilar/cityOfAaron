@@ -64,8 +64,9 @@ public class ListMenuView extends MenuView {
                 break;
             case 5: // Return to the Game menu
                 return;
- 
-        } 
+                //GameMenuView gmv = new GameMenuView();
+                //gmv.displayMenu();
+         } 
     }
          
     // The listAnimals method
@@ -100,8 +101,7 @@ public class ListMenuView extends MenuView {
                    // List or view the tools in the storehouse
                    System.out.format("%-16s%-24s\n", animal.getName(), animal.getNumber());
                 }
-            listAnimals();
-            
+                        
         } 
         //action 2 - save the list
         else if (action == 2) {
@@ -112,14 +112,13 @@ public class ListMenuView extends MenuView {
             //call method printwriter to save the file
             Printwriter.printAnimals(animals, filepath);
             
-            //show again the animals menu
-            listAnimals();
             
         } 
         //action 3 - return to previous menu
         else if (action == 3) {
-            ListMenuView lmv = new ListMenuView();
-            lmv.displayMenu();
+            return;
+            //ListMenuView lmv = new ListMenuView();
+            //lmv.displayMenu();
         } 
         //invalid option
         else {
