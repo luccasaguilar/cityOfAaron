@@ -33,12 +33,12 @@ public class GameMenuView extends MenuView {
                       "**************************************\n" +
                       " 1 - List or view the game map\n" +
                       " 2 - List or view the game menu list\n" +
-                      //" 3 - List or view the move to new location\n" +
-                      " 3 - Save Game\n" +  
-                      " 4 - List or view the game manage crops\n" +
-                      " 5 - Return to the Main menu\n",
+                      " 3 - List or view the move to new location\n" +
+                      " 4 - Save Game\n" +  
+                      " 5 - List or view the game manage crops\n" +
+                      " 6 - Return to the Main menu\n",
 
-        5);
+        6);
     } 
     
      // The doAction method
@@ -56,16 +56,16 @@ public class GameMenuView extends MenuView {
             case 2: // view the game menu list
                 viewList();
                 break;
-           // case 3: // move to new location in the game
-           //     moveToNewLocation();
-           //     break;
+            case 3: // move to new location in the game
+                moveToNewLocation();
+                break;
             case 4: // manage the crops
                 manageCrops();
                 break;
-            case 3: // manage the crops
+            case 5: // manage the crops
                 saveGame();
                 break;
-            case 5: // return to main menu
+            case 6: // return to main menu
                 return;
  
         } 
