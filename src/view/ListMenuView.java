@@ -48,7 +48,7 @@ public class ListMenuView extends MenuView {
     // Author: Luccas       
     @Override public void doAction(int option)
     {
-         switch(option)
+        switch(option)
         {
             case 1: // List or view the animals in the storehouse
                 listAnimals();
@@ -72,27 +72,67 @@ public class ListMenuView extends MenuView {
     // Purpose: List or view the animals in the storehouse
     // Parameters: none
     // Returns: none
-    // Author: Luccas     
+    // Author: Luccas
+    // Last Update 12/07/2018
     public void listAnimals(){
+        
+        //Show options to show, save or return
+        System.out.format("\n" +
+                      "***************************************\n" +
+                      "* CITY OF AARON: DISPLAY/PRINT ANIMALS*\n" +
+                      "***************************************\n" +
+                      " 1 - View the list of animals in the storehouse\n" +
+                      " 2 - Save to a file the List of animals in the storehouse\n" +
+                      " 3 - Return to the Display/Print menu\n");
+
+        System.out.print("\nPlease choose one option: ");  
+        int action = keyboard.nextInt();
+        
         // List or view the animals in the storehouse
-        //System.out.println("\nList or view the animals in the storehouse option selected.");
         Game theGame = CityOfAaron.getGame();
         ArrayList<ListItem> animals = theGame.getAnimals();
         
-	System.out.format("%-16s%-24s\n", "Animal", "Quantity");
-        for(ListItem animal : animals) { 
-		
-         // List or view the tools in the storehouse
-        //System.out.println(tool.toString());
-        System.out.format("%-16s%-24s\n", animal.getName(), animal.getNumber());
+        //action 1 - view the list
+        if (action == 1) {
+            System.out.format("%-16s%-24s\n", "Animal", "Quantity");
+            for(ListItem animal : animals) 
+                { 
+                   // List or view the tools in the storehouse
+                   System.out.format("%-16s%-24s\n", animal.getName(), animal.getNumber());
+                }
+            listAnimals();
+            
+        } 
+        //action 2 - save the list
+        else if (action == 2) {
+            //ask user to input the filepath
+            System.out.println("\nSave List - please enter the filepath to save the list:");
+            String filepath = keyboard.next();
+            
+            //call method printwriter to save the file
+            Printwriter.printAnimals(animals, filepath);
+            
+            //show again the animals menu
+            listAnimals();
+            
+        } 
+        //action 3 - return to previous menu
+        else if (action == 3) {
+            ListMenuView lmv = new ListMenuView();
+            lmv.displayMenu();
+        } 
+        //invalid option
+        else {
+            System.out.print("\nPlease choose a valid option (1-3)");
+            listAnimals();
         }
     }
-    
+        
     // The listTools method
     // Purpose: List or view the tools in the storehouse
-        // Parameters: none
+    // Parameters: none
     // Returns: none
-    //Author: Luccas     
+    // Author: Luccas     
     public void listTools(){
          
         Game theGame = CityOfAaron.getGame();
