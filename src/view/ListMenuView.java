@@ -126,6 +126,7 @@ public class ListMenuView extends MenuView {
             listAnimals();
         }
     }
+   
         
     // The listTools method
     // Purpose: List or view the tools in the storehouse
@@ -133,18 +134,58 @@ public class ListMenuView extends MenuView {
     // Returns: none
     // Author: Luccas     
     public void listTools(){
+        
+        //Show options to show, save or return
+        System.out.format("\n" +
+                      "***************************************\n" +
+                      "* CITY OF AARON: DISPLAY/PRINT TOOLS*\n" +
+                      "***************************************\n" +
+                      " 1 - View the list of tools in the storehouse\n" +
+                      " 2 - Save to a file the List of tools in the storehouse\n" +
+                      " 3 - Return to the Display/Print menu\n");
+
+        System.out.print("\nPlease choose one option: ");  
+        int action = keyboard.nextInt();
          
+        // List or view the animals in the storehouse
         Game theGame = CityOfAaron.getGame();
         ArrayList<ListItem> tools = theGame.getTools();
         
-	System.out.format("%-16s%-24s\n", "Tool", "Quantity");
-        for(ListItem tool : tools) { 
-		
-         // List or view the tools in the storehouse
-        //System.out.println(tool.toString());
-        System.out.format("%-16s%-24s\n", tool.getName(), tool.getNumber());
+         //action 1 - view the list
+        if (action == 1) {
+            System.out.format("%-16s%-24s\n", "Tool", "Quantity");
+            for(ListItem tool : tools) 
+                { 
+                   // List or view the tools in the storehouse
+                   System.out.format("%-16s%-24s\n", tool.getName(), tool.getNumber());
+                }
+            listTools();   
+            } 
+        
+    
+         //action 2 - save the list
+        else if (action == 2) {
+            //ask user to input the filepath
+            System.out.println("\nSave List - please enter the filepath to save the list:");
+            String filepath = keyboard.next();
+            
+            //call method printwriter to save the file
+            Printwriter.printTools(tools, filepath);
+            
+            //show again the tools menu
+            listTools();
+            
+        } 
+        //action 3 - return to previous menu
+        else if (action == 3) {
+            ListMenuView lmv = new ListMenuView();
+            lmv.displayMenu();
+        } 
+        //invalid option
+        else {
+            System.out.print("\nPlease choose a valid option (1-3)");
+            listTools();
         }
-   
     }
 
     // The listProvisions method
