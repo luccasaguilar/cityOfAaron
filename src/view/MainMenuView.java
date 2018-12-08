@@ -100,6 +100,7 @@ public class MainMenuView extends MenuView {
         
      
         //prompt user and get a file path 
+        System.out.println("\nLoad Saved Game - please enter the filepath to load the game:");
         String filepath = keyboard.next();
         
         //call the getSavedGame() method in the GameControl class to load the game

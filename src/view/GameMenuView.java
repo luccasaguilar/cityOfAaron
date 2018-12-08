@@ -119,7 +119,7 @@ public class GameMenuView extends MenuView {
     //Returns: none
     public void saveGame(){
         //View the manage crops
-        System.out.println("\nSave Game");
+        System.out.println("\nSave Game - please enter the filepath to save the game:");
         
         Game theGame = CityOfAaron.getGame();
        

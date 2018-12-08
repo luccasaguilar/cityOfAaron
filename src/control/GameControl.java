@@ -287,10 +287,11 @@ public class GameControl {
             ObjectInputStream input = new ObjectInputStream(fips);
             game = (Game) input.readObject();
             CityOfAaron.setGame(game);
+            System.out.println("\n The game was loaded successfully.");
         } 
         catch(Exception e)
         {
-            System.out.println("\n There was an error reading the saved game file");
+            System.out.println("\n There was an error reading the saved game file.");
         }
     }
     
@@ -310,10 +311,11 @@ public class GameControl {
             output.writeObject(game);
             //output.writeObject("Test");
             output.close();
+            System.out.println("\n The game was saved successfully.");
         } 
         catch(Exception e)
         {
-            System.out.println("\n There was an error saving the game file");
+            System.out.println("\n There was an error saving the game file.");
         }
     }
 }
