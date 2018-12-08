@@ -61,5 +61,24 @@ public class Printwriter
             System.out.println("File Error.");
         }
     }
+    
+        public static void printProvisions(ArrayList<ListItem> _provisions, String _filepath)
+    {
+         
+        try(PrintWriter out = new PrintWriter(_filepath))
+        {
+            out.println(String.format("%-16s%-24s\n", "Tool", "Quantity"));
+            for(ListItem provision : _provisions) 
+                { 
+                   // List or view the tools in the storehouse
+                   out.println(String.format("%-16s%-24s\n", provision.getName(), provision.getNumber()));
+                }
+            System.out.println("\n The list was saved successfully.");
+        }
+        catch(IOException e)
+        {
+            System.out.println("File Error.");
+        }
+    }
 }
 
