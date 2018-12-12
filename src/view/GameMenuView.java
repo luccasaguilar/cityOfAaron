@@ -10,6 +10,8 @@ import cityofaaron.CityOfAaron;
 import java.util.Scanner;
 import model.Game;
 import control.*;
+import java.util.ArrayList;
+import model.*;
 
 
 
@@ -78,7 +80,39 @@ public class GameMenuView extends MenuView {
     //Returns: none
     public void viewMap(){
         //View the map
-        System.out.println("\nGame Map");
+        System.out.println("\n ****    Game Map    ****");
+        
+        // List or view the game map
+        Game theGame = CityOfAaron.getGame();
+        Map map = theGame.getMap();
+        
+        int i = 0;
+        int x = 0;
+        int line = 0;
+        System.out.println("");
+        System.out.println("      1   2   3   4   5");
+        while (i<5) {
+            line = i+1;
+            System.out.printf(" "+ line +" ");
+            while (x<5) {
+                System.out.printf(" | ");
+                Location locations = map.getLocations(i,x);
+                System.out.printf(locations.getSymbol());
+                x++;
+            }
+            System.out.println(" | ");
+            x=0;
+            i++;
+        }
+        System.out.println("\n Key:");
+        System.out.println("M: mountain");
+        System.out.println("R: river");
+        System.out.println("V: valley");
+        System.out.println("W: wilderness");
+        System.out.println("F: farm");
+        System.out.println("T: forest");
+        System.out.println("C: village");
+        
     }
     
     //The viewList method
