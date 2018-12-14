@@ -8,6 +8,9 @@ package control;
 import java.util.Random;
 import model.*;
 import exceptions.*;
+import cityofaaron.CityOfAaron;
+import java.util.ArrayList;
+
 
 
 public class CropControl
@@ -18,6 +21,8 @@ private static final int LAND_RANGE = 10;
 
 // random number generator
 private static Random random = new Random();
+private static Game game = new Game();
+
 
 // calcLandCost() method
 // Purpose: Calculate a random land cost between 17 and 26 bushels/acre
@@ -189,4 +194,34 @@ public static int setOffering(int percentage, CropData cropData)
     //return the percentage
         return percentage;           
     }
+
+
+// The surplus method
+// Purpose: Surplus wheat to buy more tools
+// Parameters: the number of tools to purchase
+// and a reference to a CropData object
+// Returns: the number of tools to buy using surplus
+//Author: Ron Silva
+// updated at 12/11/2018 to include exception
+
+public static int surplusWheat (int toolsToBuy, CropData cropData) throws CropException
+ { 
+      
+        
+    //If tools to buy < 0, return Please use a valid number
+    int _toolsToBuy = cropData.getToolsToBuy();
+    if (toolsToBuy < 0){
+        throw new CropException("Please use a valid number ");}
+
+    //If wheatInStore < toolsToBuy * 4), return There is insufficient wheat to buy tools, you can use surplus
+    int wheatInStore = cropData.getWheatInStore();
+    if (wheatInStore < toolsToBuy * 4){
+        throw new CropException("There is insufficient wheat to buy tools, you can use surplus");
+    }
+    wheatInStore -= toolsToBuy * 4;
+    cropData.setWheatInStore(wheatInStore);
+   
+    //return acresPlanted
+    return toolsToBuy;
+ }
 }

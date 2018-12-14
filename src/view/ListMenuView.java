@@ -148,8 +148,8 @@ public class ListMenuView extends MenuView {
         int action = keyboard.nextInt();
          
         // List or view the tools in the storehouse
-        Game theGame = CityOfAaron.getGame();
-        ArrayList<ListItem> tools = theGame.getTools();
+        Game game = CityOfAaron.getGame();
+        ArrayList<ListItem> tools = game.getTools();
         
          //action 1 - view the list
         if (action == 1) {

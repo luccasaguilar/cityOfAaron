@@ -85,4 +85,5 @@ public class Game implements Serializable {
     public ArrayList<ListItem> getProvisions() {
 		return provisions;
 	}
+    
 }

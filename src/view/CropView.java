@@ -230,5 +230,40 @@ public class CropView {
         plantCropsView();
 
     }
+    
+     // The surplusWheatView method
+    // Purpose: interface with the user input the tools to purchase
+    // Parameters: none
+    // Returns: none  
+    // author Ron Silva
+    // updated at 12/11/2018 to include exception
+    public static void SurplusWheatView(){
+        
+        int buyTools;
+
+        boolean paramsNotOkay;
+        do {
+            paramsNotOkay = false;
+
+            // Prompt the user to enter the tools to purchase
+            System.out.print("\nHow many tools you want to purchase with Surplus wheat? "); 
+            
+            //  Get the user’s input and save it.
+            buyTools = keyboard.nextInt();
+            try {
+                CropControl.surplusWheat(buyTools, cropData);
+            
+                // output how much land is planted
+                System.out.format("\nYou buy %d tools. ", cropData.getToolsToBuy());
+                
+                }
+            catch (CropException e)
+                {
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+                }
+            } while(paramsNotOkay);
+
+    }
 
 }

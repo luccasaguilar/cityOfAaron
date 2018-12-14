@@ -27,6 +27,8 @@ public class CropData implements Serializable{
     private int offeringBushels;
     private int wheatForFood;
     private int acresPlanted;
+    private int surplusWheat;
+    private int toolsToBuy;
     
     public CropData() {}
     
@@ -120,4 +122,19 @@ public class CropData implements Serializable{
     public void setOfferingBushels(int _offeringBushels) {
         offeringBushels = _offeringBushels;
     }
+    
+     public int getSurplusWheat() {
+        return surplusWheat;
+    }
+     public void setSurplusWheat(int _surplusWheat) {
+        surplusWheat = _surplusWheat;
+    }
+     
+        public int getToolsToBuy() {
+        return toolsToBuy;
+    }
+     public void setToolsToBuy(int _toolsToBuy) {
+        toolsToBuy = _toolsToBuy;
+    }
+     
 }
