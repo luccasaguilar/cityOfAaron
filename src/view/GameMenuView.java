@@ -62,10 +62,10 @@ public class GameMenuView extends MenuView {
                 moveToNewLocation();
                 break;
             case 4: // manage the crops
-                manageCrops();
+                saveGame();
                 break;
             case 5: // manage the crops
-                saveGame();
+                manageCrops();
                 break;
             case 6: // return to main menu
                 return;
