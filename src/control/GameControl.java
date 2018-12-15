@@ -1,4 +1,4 @@
-// Source code for the GameControl class
+    // Source code for the GameControl class
 // The GameControl class is a member of the controllayer
 // Methods in the  GameControl class manage Game objects
 // Author: Luccas Aguilar, Ronan Macedo, Ronald Silva

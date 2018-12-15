@@ -228,6 +228,9 @@ public class CropView {
         
         // call the plantCropsView( ) method - 5
         plantCropsView();
+        
+        // call the surplusWheatView() method - 6
+        surplusWheatView();
 
     }
     
@@ -237,7 +240,7 @@ public class CropView {
     // Returns: none  
     // author Ron Silva
     // updated at 12/11/2018 to include exception
-    public static void SurplusWheatView(){
+    public static void surplusWheatView(){
         
         int buyTools;
 
